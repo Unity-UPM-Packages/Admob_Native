@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Native Banner Portrait Integers -->
+    <integer name="banner_content_orientation">1</integer> <!-- 1 is vertical -->
+</resources>
