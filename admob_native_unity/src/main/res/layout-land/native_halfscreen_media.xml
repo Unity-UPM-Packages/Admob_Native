@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ad_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Guideline phân chia chiều rộng màn hình ngang thành 50% -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_half"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <!-- NativeAdView chỉ chiếm đúng nửa bên trái -->
+        <com.google.android.gms.ads.nativead.NativeAdView
+            android:id="@+id/native_ad_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_half"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Khung card thực tế chiếm toàn bộ diện tích của NativeAdView -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ad_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/native_banner_background">
+
+                <!-- 1. MediaView tỉ lệ 4:3, tự động tính chiều rộng dựa trên chiều cao thực tế để tránh tràn lùi -->
+                <com.google.android.gms.ads.nativead.MediaView
+                    android:id="@+id/media_view"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:minWidth="120dp"
+                    android:minHeight="120dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@android:color/darker_gray"
+                    app:layout_constraintDimensionRatio="W,16:9"
+                    app:layout_constraintBottom_toTopOf="@id/bottom_card"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- 2. Thẻ thông tin bottom_card nằm phía dưới MediaView (giữ nguyên so với màn dọc) -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bottom_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/media_view">
+
+                    <!-- Icon quảng cáo (ẩn theo cấu trúc) -->
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@android:drawable/sym_def_app_icon" />
+
+                    <!-- Container chứa thông tin chữ -->
+                    <LinearLayout
+                        android:id="@+id/content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <!-- Dòng tiêu đề: Nhãn AD + Title -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Nhãn Ad màu xanh lá cây giống như banner -->
+                            <TextView
+                                android:id="@+id/ad_notification_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/gnt_rounded_corners_shape"
+                                android:gravity="center"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:text="Ad"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                app:backgroundTint="@color/gnt_ad_green" />
+
+                            <!-- Tên quảng cáo (primary) -->
+                            <TextView
+                                android:id="@+id/primary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@android:color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                tools:text="Quảng cáo thử nghiệm" />
+
+                        </LinearLayout>
+
+                        <!-- Dòng mô tả quảng cáo (secondary) -->
+                        <TextView
+                            android:id="@+id/secondary"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="#B0BEC5"
+                            android:textSize="13sp"
+                            tools:text="Install Flood-It App for free!" />
+
+                    </LinearLayout>
+
+                    <!-- Nút CTA kéo dài toàn bộ chiều rộng ở dưới cùng của thẻ -->
+                    <Button
+                        android:id="@+id/cta"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/ad_cta_button_banner_background"
+                        android:gravity="center"
+                        android:textColor="#1B5E20"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/content"
+                        tools:text="INSTALL" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 3. Nút đóng đặt đè ở góc trên bên trái của MediaView -->
+                <ImageView
+                    android:id="@+id/ad_close_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="24dp"
+                    android:clickable="true"
+                    android:contentDescription="Close Ad"
+                    android:elevation="20dp"
+                    android:focusable="true"
+                    android:padding="5dp"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- 4. Bộ đếm ngược đặt đè ở góc trên bên phải của MediaView -->
+                <ProgressBar
+                    android:id="@+id/ad_progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:elevation="20dp"
+                    android:indeterminate="false"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/circular_progress_bar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/ad_countdown_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="20dp"
+                    android:gravity="center"
+                    android:textColor="@color/icon_grey"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/ad_progress_bar"
+                    app:layout_constraintEnd_toEndOf="@id/ad_progress_bar"
+                    app:layout_constraintStart_toStartOf="@id/ad_progress_bar"
+                    app:layout_constraintTop_toTopOf="@id/ad_progress_bar"
+                    tools:text="5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.gms.ads.nativead.NativeAdView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
