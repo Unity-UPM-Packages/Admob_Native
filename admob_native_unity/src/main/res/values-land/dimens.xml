@@ -2,25 +2,4 @@
     <!-- Màn hình ngang: Kích thước gần giống với thiết kế gốc của bạn -->
     <dimen name="native_video_width">500dp</dimen>
     <dimen name="native_video_height">300dp</dimen>
-
-    <!-- Native Banner Landscape Dimensions -->
-    <dimen name="banner_ad_height">40dp</dimen>
-    <dimen name="banner_background_height">40dp</dimen>
-    <dimen name="banner_icon_width">35dp</dimen>
-    <dimen name="banner_icon_height">35dp</dimen>
-    <dimen name="banner_icon_margin_start">8dp</dimen>
-    <dimen name="banner_cta_width">120dp</dimen>
-    <dimen name="banner_cta_min_width">120dp</dimen>
-    <dimen name="banner_cta_height">30dp</dimen>
-    <dimen name="banner_cta_margin_end">8dp</dimen>
-    <item name="banner_headline_width" type="dimen">0dp</item>
-    <item name="banner_headline_weight" format="float" type="dimen">1.0</item>
-    <item name="banner_primary_width" type="dimen">0dp</item>
-    <item name="banner_primary_weight" format="float" type="dimen">1.0</item>
-    <dimen name="banner_primary_margin_start">4dp</dimen>
-    <item name="banner_body_width" type="dimen">0dp</item>
-    <item name="banner_body_weight" format="float" type="dimen">1.0</item>
-    <dimen name="banner_body_margin_start">8dp</dimen>
-    <dimen name="banner_body_margin_top">0dp</dimen>
-    <dimen name="banner_body_text_size">12sp</dimen>
 </resources>

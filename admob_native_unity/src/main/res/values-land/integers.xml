@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Native Banner Landscape Integers -->
-    <integer name="banner_content_orientation">0</integer> <!-- 0 is horizontal -->
-</resources>
