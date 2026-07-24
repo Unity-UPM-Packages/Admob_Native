@@ -135,7 +135,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:contentDescription="Close Ad"
                 android:layout_marginTop="15dp"
-                android:layout_marginStart="15dp" />
+                android:layout_marginStart="15dp"
+                android:visibility="gone"
+                tools:visibility="visible" />
 
             <!-- 5. Bộ đếm ngược ở góc trên bên phải (Theo chuẩn) -->
             <ProgressBar
@@ -149,7 +151,9 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="17dp" />
+                android:layout_marginEnd="17dp"
+                android:visibility="gone"
+                tools:visibility="visible" />
 
             <TextView
                 android:id="@+id/ad_countdown_text"
@@ -163,7 +167,9 @@
                 app:layout_constraintTop_toTopOf="@id/ad_progress_bar"
                 app:layout_constraintBottom_toBottomOf="@id/ad_progress_bar"
                 app:layout_constraintStart_toStartOf="@id/ad_progress_bar"
-                app:layout_constraintEnd_toEndOf="@id/ad_progress_bar" />
+                app:layout_constraintEnd_toEndOf="@id/ad_progress_bar"
+                android:visibility="gone"
+                tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.gms.ads.nativead.NativeAdView>

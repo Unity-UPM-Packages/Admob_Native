@@ -114,7 +114,9 @@
                     android:padding="6dp"
                     android:src="@android:drawable/ic_menu_close_clear_cancel"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
 
                 <ProgressBar
                     android:id="@+id/ad_progress_bar"
@@ -128,7 +130,9 @@
                     android:progress="100"
                     android:progressDrawable="@drawable/circular_progress_bar"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
 
                 <TextView
                     android:id="@+id/ad_countdown_text"
@@ -143,7 +147,9 @@
                     app:layout_constraintEnd_toEndOf="@id/ad_progress_bar"
                     app:layout_constraintStart_toStartOf="@id/ad_progress_bar"
                     app:layout_constraintTop_toTopOf="@id/ad_progress_bar"
-                    tools:text="5" />
+                    tools:text="5"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
