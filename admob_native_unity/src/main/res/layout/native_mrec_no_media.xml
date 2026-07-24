@@ -17,7 +17,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/background"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/native_banner_background">>
 
             <!-- 1. Nút CTA ở dưới cùng -->
             <Button
@@ -79,7 +80,7 @@
                         android:layout_weight="1"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        android:textColor="@android:color/black"
+                        android:textColor="@android:color/white"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         tools:text="Google Ads" />
