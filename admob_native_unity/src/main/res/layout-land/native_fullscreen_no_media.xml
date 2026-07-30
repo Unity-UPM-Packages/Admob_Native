@@ -5,7 +5,8 @@
     android:id="@+id/ad_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gnt_white">
+    android:background="@color/gnt_white"
+    android:elevation="100dp">
 
     <!-- NativeAdView sẽ không có margin để hiển thị toàn màn hình -->
     <com.google.android.gms.ads.nativead.NativeAdView

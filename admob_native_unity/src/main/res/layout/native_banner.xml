@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom|center_horizontal"
-    android:id="@+id/ad_content">
+    android:id="@+id/ad_content"
+    android:elevation="10dp">
 
     <!-- NativeAdView được đặt ở dưới cùng và có chiều cao tự động -->
     <com.google.android.gms.ads.nativead.NativeAdView
