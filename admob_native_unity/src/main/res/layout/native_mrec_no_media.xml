@@ -19,7 +19,7 @@
             android:id="@+id/background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/native_banner_background">>
+            android:background="@drawable/native_background">
 
             <!-- 1. Nút CTA ở dưới cùng -->
             <Button
@@ -117,58 +117,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/info_bar"
                 tools:src="@android:drawable/sym_def_app_icon" />
-
-            <!-- 4. Nút đóng đặt đè ở góc trên bên phải (đè lên info_bar) -->
-            <ImageView
-                android:id="@+id/ad_close_button"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:clickable="true"
-                android:contentDescription="Close Ad"
-                android:elevation="20dp"
-                android:focusable="true"
-                android:padding="5dp"
-                android:src="@android:drawable/ic_menu_close_clear_cancel"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:visibility="gone"
-                tools:visibility="visible" />
-
-            <!-- 5. Bộ đếm ngược đặt đè ở góc trên bên phải (đè lên info_bar) -->
-            <ProgressBar
-                android:id="@+id/ad_progress_bar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_marginTop="11dp"
-                android:layout_marginEnd="11dp"
-                android:elevation="20dp"
-                android:indeterminate="false"
-                android:progress="100"
-                android:progressDrawable="@drawable/circular_progress_bar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:visibility="gone"
-                tools:visibility="visible" />
-
-            <TextView
-                android:id="@+id/ad_countdown_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="20dp"
-                android:gravity="center"
-                android:textColor="@color/icon_grey"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/ad_progress_bar"
-                app:layout_constraintEnd_toEndOf="@id/ad_progress_bar"
-                app:layout_constraintStart_toStartOf="@id/ad_progress_bar"
-                app:layout_constraintTop_toTopOf="@id/ad_progress_bar"
-                tools:text="5"
-                android:visibility="gone"
-                tools:visibility="visible" />
 
             <!-- Thành phần bắt buộc không sử dụng nhưng giữ lại để tương thích SDK -->
             <TextView

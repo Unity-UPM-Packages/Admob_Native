@@ -19,7 +19,7 @@
             android:id="@+id/background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/native_banner_background">
+            android:background="@drawable/native_background">
 
             <!-- Nút CTA ở dưới cùng -->
             <Button
