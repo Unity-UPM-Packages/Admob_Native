@@ -66,6 +66,7 @@ class CountdownDecorator(
 
         // PHASE 1: Initial state - Hide everything
         closeButton?.visibility = View.GONE
+        closeButton?.alpha = 1.0f
         progressBar?.visibility = View.GONE
         countdownText?.visibility = View.GONE
         closeButton?.isClickable = false
@@ -101,6 +102,7 @@ class CountdownDecorator(
         progressBar?.visibility = View.VISIBLE
         countdownText?.visibility = View.VISIBLE
         closeButton?.visibility = View.GONE
+        closeButton?.alpha = 0.5f
 
         countdownTimer = object : SonicCountDownTimer(countdownTimerDurationMillis, 1000) {
             override fun onTimerTick(timeRemaining: Long) {
@@ -110,6 +112,14 @@ class CountdownDecorator(
                 if (secondsRemaining <= 0) {
                     onTimerFinish()
                     return
+                }
+
+                if (secondsRemaining <= 2) {
+                    closeButton?.visibility = View.VISIBLE
+                    closeButton?.alpha = 0.5f
+                    closeButton?.isClickable = false
+                } else {
+                    closeButton?.visibility = View.GONE
                 }
 
                 countdownText?.text = secondsRemaining.toString()
@@ -135,6 +145,7 @@ class CountdownDecorator(
         progressBar?.visibility = View.GONE
         countdownText?.visibility = View.GONE
         closeButton?.visibility = View.VISIBLE
+        closeButton?.alpha = 1.0f
         closeButton?.isClickable = false
 
 
