@@ -5,39 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom|center_horizontal"
-    android:id="@+id/ad_content">
+    android:id="@+id/ad_content"
+    android:elevation="10dp">
 
+    <!-- NativeAdView được đặt ở dưới cùng và có chiều cao tự động -->
     <com.google.android.gms.ads.nativead.NativeAdView
         android:id="@+id/native_ad_view"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:layout_gravity="bottom|center_horizontal">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/background"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="60dp"
             android:paddingHorizontal="8dp"
             android:layout_gravity="bottom|center_horizontal"
             android:background="@drawable/native_banner_background">
 
+
+            <!-- Icon quảng cáo bên trái -->
             <ImageView
                 android:id="@+id/icon"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:scaleType="fitCenter"
-                android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@android:drawable/sym_def_app_icon" />
 
-            <Button
+            <!-- Nút CTA bên phải -->
+            <android.widget.Button
                 android:id="@+id/cta"
-                android:layout_width="wrap_content"
-                android:minWidth="120dp"
-                android:layout_height="30dp"
-                android:background="@drawable/ad_cta_button_banner_background"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/ad_cta_button_banner_background_inset"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
                 android:textColor="#0E2139"
@@ -45,30 +48,32 @@
                 android:textSize="15sp"
                 android:gravity="center"
                 android:maxLines="1"
-                android:layout_marginEnd="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Install" />
 
+            <!-- Container cho khối text ở giữa -->
             <LinearLayout
                 android:id="@+id/content"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/cta"
                 app:layout_constraintStart_toEndOf="@id/icon"
                 app:layout_constraintTop_toTopOf="parent">
 
+                <!-- Dòng trên cùng: Nhãn AD + Headline -->
                 <LinearLayout
                     android:id="@+id/headline"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
                     android:orientation="horizontal">
 
                     <TextView
@@ -86,30 +91,31 @@
 
                     <TextView
                         android:id="@+id/primary"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_marginStart="4dp"
+                        android:gravity="bottom"
                         android:ellipsize="end"
                         android:maxLines="1"
                         android:textColor="#B6BCC3"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         tools:text="Quảng cáo thử nghiệm" />
-                    <TextView
-                        android:id="@+id/body"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="8dp"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:textColor="#B6BCC3"
-                        android:textSize="12sp"
-                        tools:text="Install Flood-It App for free!" />
                 </LinearLayout>
 
-
+                <!-- Dòng dưới: Body text -->
+                <TextView
+                    android:id="@+id/body"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="2dp"
+                    android:gravity="top"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#B6BCC3"
+                    android:textSize="11sp"
+                    tools:text="Install Flood-It App for free!" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

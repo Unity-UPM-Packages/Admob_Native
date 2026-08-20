@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ad_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gnt_white"
+    android:elevation="100dp">
+
+    <!-- NativeAdView sẽ không có margin để hiển thị toàn màn hình -->
+    <com.google.android.gms.ads.nativead.NativeAdView
+        android:id="@+id/native_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 1. Container cho Title (primary) và Subtitle (secondary) kéo dài toàn bộ chiều rộng cách lề 20dp -->
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="40dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="Title of the Ad" />
+
+                <TextView
+                    android:id="@+id/secondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingStart="40dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp"
+                    tools:text="Advertiser Name" />
+
+            </LinearLayout>
+
+            <!-- 2. Icon đưa xuống chính giữa màn hình dọc -->
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@id/cta"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/content"
+                tools:src="@android:drawable/sym_def_app_icon" />
+
+            <!-- 3. Nút CTA đưa xuống dưới cùng màn hình dọc -->
+            <Button
+                android:id="@+id/cta"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ad_cta_button_banner_background"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:textColor="#1B5E20"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Install" />
+
+            <!-- 4. Nút đóng và Đếm ngược khai báo SAU content ở góc trên bên phải + thêm elevation="20dp" để nằm đè lên trên tiêu đề -->
+            <ImageView
+                android:id="@+id/ad_close_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:contentDescription="Close Ad"
+                android:elevation="20dp"
+                android:focusable="true"
+                android:padding="6dp"
+                android:src="@drawable/ic_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ProgressBar
+                android:id="@+id/ad_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginStart="19dp"
+                android:elevation="20dp"
+                android:indeterminate="false"
+                android:progress="100"
+                android:progressDrawable="@drawable/circular_progress_bar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/ad_countdown_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="20dp"
+                android:gravity="center"
+                android:textColor="@color/icon_grey"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ad_progress_bar"
+                app:layout_constraintEnd_toEndOf="@id/ad_progress_bar"
+                app:layout_constraintStart_toStartOf="@id/ad_progress_bar"
+                app:layout_constraintTop_toTopOf="@id/ad_progress_bar"
+                tools:text="5"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.gms.ads.nativead.NativeAdView>
+</FrameLayout>
