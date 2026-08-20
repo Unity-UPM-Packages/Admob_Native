@@ -45,29 +45,50 @@
                     android:scaleType="fitCenter" />
             </FrameLayout>
 
-            <!-- 2. Phần bên phải: Chiếm 50% chiều rộng còn lại, nền trắng, padding 32dp (gấp đôi khoảng cách) -->
+            <!-- 2. Phần bên phải: Chiếm trọn 50% chiều rộng còn lại, không padding ngoài để vùng click chạm tới tận mép -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/right_container"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@color/gnt_white"
-                android:padding="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/split_guideline"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <!-- Dòng 1: Nhãn Ad vàng (Bắt đầu chuỗi liên kết dọc Packed tự căn giữa) -->
+                <!-- Headline Vùng Click Phủ Tràn Mép:
+                     Kéo căng 100% chạm tới tận 4 mép ngoài cùng (trên, dưới, trục giữa 50%, và mép phải màn hình) -->
+                <TextView
+                    android:id="@+id/primary"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:ellipsize="end"
+                    android:gravity="start|center_vertical"
+                    android:maxLines="1"
+                    android:paddingBottom="74dp"
+                    android:paddingEnd="32dp"
+                    android:paddingStart="70dp"
+                    android:textColor="@color/gnt_black"
+                    android:textSize="@dimen/gnt_land_inter_headline_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Headline" />
+
+                <!-- Dòng 1: Nhãn Ad vàng (căn lề 32dp) -->
                 <TextView
                     android:id="@+id/ad_notification_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
                     android:background="@drawable/ad_badge_yellow_background"
                     android:gravity="center"
-                    android:paddingStart="6dp"
-                    android:paddingEnd="6dp"
-                    android:paddingTop="1dp"
                     android:paddingBottom="1dp"
+                    android:paddingEnd="6dp"
+                    android:paddingStart="6dp"
+                    android:paddingTop="1dp"
                     android:text="Ad"
                     android:textColor="@color/gnt_ad_badge_text_brown"
                     android:textSize="@dimen/gnt_land_inter_ad_badge_size"
@@ -77,29 +98,13 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_chainStyle="packed" />
 
-                <!-- Dòng 1: Headline đặt sát cạnh nhãn Ad -->
-                <TextView
-                    android:id="@+id/primary"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:ellipsize="end"
-                    android:gravity="start|center_vertical"
-                    android:maxLines="1"
-                    android:textColor="@color/gnt_black"
-                    android:textSize="@dimen/gnt_land_inter_headline_size"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@id/ad_notification_view"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/ad_notification_view"
-                    app:layout_constraintTop_toTopOf="@id/ad_notification_view"
-                    tools:text="Headline" />
-
-                <!-- Dòng 2: Secondary (Mô tả phụ) -->
+                <!-- Dòng 2: Secondary (Mô tả phụ, căn lề 32dp hai bên) -->
                 <TextView
                     android:id="@+id/secondary"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginStart="32dp"
                     android:layout_marginTop="6dp"
                     android:ellipsize="end"
                     android:maxLines="1"
@@ -111,11 +116,13 @@
                     app:layout_constraintTop_toBottomOf="@id/ad_notification_view"
                     tools:text="body/advertise" />
 
-                <!-- Dòng 3: Khung chứa hàng nút bấm phân chia 50/50 -->
+                <!-- Dòng 3: Khung chứa hàng nút bấm phân chia 50/50 (căn lề 32dp hai bên) -->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/button_container"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/gnt_land_inter_btn_height"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginStart="32dp"
                     android:layout_marginTop="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -172,15 +179,16 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- 3. Đếm ngược vòng tròn ở góc trên bên phải (Khớp hoàn toàn vị trí & kích thước nút Close của native_fullscreen_media) -->
+            <!-- 3. Vòng tròn đếm ngược đè ở góc trên bên phải màn hình -->
             <ProgressBar
                 android:id="@+id/ad_progress_bar"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="@dimen/gnt_fs_close_btn_size"
-                android:layout_height="@dimen/gnt_fs_close_btn_size"
-                android:layout_marginTop="15dp"
+                android:layout_width="@dimen/gnt_land_inter_progress_size"
+                android:layout_height="@dimen/gnt_land_inter_progress_size"
                 android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
                 android:indeterminate="false"
+                android:max="100"
                 android:progress="100"
                 android:progressDrawable="@drawable/circular_progress_bar"
                 android:visibility="gone"
@@ -188,12 +196,12 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:visibility="visible" />
 
+            <!-- Text số giây đếm ngược bên trong vòng tròn -->
             <TextView
                 android:id="@+id/ad_countdown_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textColor="@color/icon_grey"
+                android:textColor="@color/gnt_white"
                 android:textSize="@dimen/gnt_land_inter_countdown_text_size"
                 android:textStyle="bold"
                 android:visibility="gone"

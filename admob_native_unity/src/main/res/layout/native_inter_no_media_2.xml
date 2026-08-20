@@ -19,47 +19,27 @@
             android:layout_height="match_parent"
             android:background="@color/gnt_white">
 
-            <!-- Trục phân cách 50% / 50% Responsive trên mọi thiết bị -->
+            <!-- Trục phân cách 50% / 50% theo chiều dọc màn hình -->
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/split_guideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.50" />
 
-            <!-- 1. Phần bên trái: Chiếm đúng 50% chiều rộng màn hình, nền D9D9D9, chứa Icon lớn 180dp -->
-            <FrameLayout
-                android:id="@+id/left_container"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/gnt_gray_d9"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/split_guideline"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/icon"
-                    android:layout_width="@dimen/gnt_land_inter_icon_size"
-                    android:layout_height="@dimen/gnt_land_inter_icon_size"
-                    android:layout_gravity="center"
-                    android:scaleType="fitCenter"
-                    tools:src="@android:drawable/sym_def_app_icon" />
-            </FrameLayout>
-
-            <!-- 2. Phần bên phải: Chiếm trọn 50% chiều rộng còn lại, không padding ngoài để vùng click chạm tới tận mép -->
+            <!-- 1. Phần bên trên: Chiếm trọn 50% chiều cao màn hình, không padding ngoài để vùng click chạm tới tận mép -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/right_container"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@color/gnt_white"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/split_guideline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/split_guideline"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <!-- Headline Vùng Click Phủ Tràn Mép:
-                     Kéo căng 100% chạm tới tận 4 mép ngoài cùng (trên, dưới, trục giữa 50%, và mép phải màn hình) -->
+                     Kéo căng 100% chạm tới tận 4 mép ngoài cùng (trên, trục giữa 50%, và hai mép trái phải màn hình) -->
                 <TextView
                     android:id="@+id/primary"
                     android:layout_width="0dp"
@@ -180,6 +160,26 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 2. Phần bên dưới: Chiếm 50% chiều cao màn hình, nền D9D9D9, chứa Icon lớn 180dp -->
+            <FrameLayout
+                android:id="@+id/left_container"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/gnt_gray_d9"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/split_guideline">
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="@dimen/gnt_land_inter_icon_size"
+                    android:layout_height="@dimen/gnt_land_inter_icon_size"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    tools:src="@android:drawable/sym_def_app_icon" />
+            </FrameLayout>
 
             <!-- 3. Vòng tròn đếm ngược đè ở góc trên bên phải màn hình -->
             <ProgressBar
