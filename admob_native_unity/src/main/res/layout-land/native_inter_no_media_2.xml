@@ -203,7 +203,7 @@
                 android:id="@+id/ad_countdown_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/gnt_white"
+                android:textColor="@color/gnt_gray_7f"
                 android:textSize="@dimen/gnt_land_inter_countdown_text_size"
                 android:textStyle="bold"
                 android:visibility="gone"

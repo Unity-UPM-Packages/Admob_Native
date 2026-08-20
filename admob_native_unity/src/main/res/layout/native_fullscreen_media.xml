@@ -51,7 +51,28 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <!-- 3. Icon ứng dụng bên trái footer (căn giữa theo chiều dọc) -->
+            <!-- 3. Headline Vùng Click Mở Rộng 100% Toàn Màn Hình:
+                 Kéo căng 0dp x 0dp chạm 4 góc ngoài cùng màn hình (Top, Bottom, Left, Right) -->
+            <TextView
+                android:id="@+id/primary"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:ellipsize="end"
+                android:gravity="bottom|start"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/gnt_fs_headline_padding_bottom"
+                android:paddingEnd="160dp"
+                android:paddingStart="@dimen/gnt_fs_headline_padding_start"
+                android:textColor="@color/gnt_white"
+                android:textSize="@dimen/gnt_fs_headline_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Headline" />
+
+            <!-- 4. Icon ứng dụng bên trái footer (căn giữa theo chiều dọc) -->
             <ImageView
                 android:id="@+id/icon"
                 android:layout_width="@dimen/gnt_fs_icon_size"
@@ -63,7 +84,7 @@
                 app:layout_constraintTop_toTopOf="@id/bottom_card"
                 tools:src="@android:drawable/sym_def_app_icon" />
 
-            <!-- 4. Nút CTA bên phải footer (căn giữa theo chiều dọc) -->
+            <!-- 5. Nút CTA bên phải footer (căn giữa theo chiều dọc) -->
             <android.widget.Button
                 android:id="@+id/cta"
                 android:layout_width="@dimen/gnt_fs_cta_width"
@@ -80,7 +101,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/bottom_card" />
 
-            <!-- 5. Nhãn Ad màu vàng: Chuỗi dọc Packed cùng Secondary để căn giữa theo chiều dọc -->
+            <!-- 6. Nhãn Ad màu vàng: Chuỗi dọc Packed cùng Secondary để căn giữa theo chiều dọc -->
             <TextView
                 android:id="@+id/ad_notification_view"
                 android:layout_width="wrap_content"
@@ -102,7 +123,7 @@
                 app:layout_constraintTop_toTopOf="@id/bottom_card"
                 app:layout_constraintVertical_chainStyle="packed" />
 
-            <!-- 6. Secondary / Mô tả phụ: Phần tử thứ hai trong chuỗi dọc packed -->
+            <!-- 7. Secondary / Mô tả phụ: Phần tử thứ hai trong chuỗi dọc packed -->
             <TextView
                 android:id="@+id/secondary"
                 android:layout_width="0dp"
@@ -118,27 +139,6 @@
                 app:layout_constraintStart_toEndOf="@id/icon"
                 app:layout_constraintTop_toBottomOf="@id/ad_notification_view"
                 tools:text="body/advertise" />
-
-            <!-- 7. Headline Vùng Click Mở Rộng:
-                 Trải rộng từ đỉnh màn hình (dưới nút Close) sang hết mép phải,
-                 đáy neo chính xác với đáy của nhãn Ad, chữ hiển thị tự nhiên cạnh nhãn Ad -->
-            <TextView
-                android:id="@+id/primary"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="6dp"
-                android:ellipsize="end"
-                android:gravity="bottom|start"
-                android:maxLines="1"
-                android:paddingEnd="160dp"
-                android:textColor="@color/gnt_white"
-                android:textSize="@dimen/gnt_fs_headline_size"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/ad_notification_view"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/ad_notification_view"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Headline" />
 
             <!-- 8. Nút Close ở góc trên bên phải: căn lề 15dp, kích thước 28dp, không padding -->
             <ImageView

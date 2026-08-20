@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <!-- Khoảng cách chuẩn giữa nhãn Ad và chữ Headline (sw >= 600dp) -->
+  <dimen name="gnt_ad_badge_headline_gap">8dp</dimen>
+
   <!-- Landscape Interstitial Responsive Dimensions (sw >= 600dp: 7-8 inch Tablets / Foldables) -->
   <dimen name="gnt_land_inter_btn_height">56dp</dimen>
   <dimen name="gnt_land_inter_headline_size">24sp</dimen>
@@ -20,6 +23,9 @@
   <dimen name="gnt_fs_headline_size">19sp</dimen>
   <dimen name="gnt_fs_secondary_size">15sp</dimen>
   <dimen name="gnt_fs_close_btn_size">38dp</dimen>
+  <dimen name="gnt_fs_headline_padding_start">118dp</dimen>
+  <dimen name="gnt_land_fs_headline_padding_start">122dp</dimen>
+  <dimen name="gnt_fs_headline_padding_bottom">40dp</dimen>
 
   <!-- AppOpen Responsive Dimensions (sw >= 600dp) -->
   <dimen name="gnt_appopen_top_bar_height">72dp</dimen>
@@ -28,4 +34,6 @@
   <dimen name="gnt_appopen_icon_size">48dp</dimen>
   <dimen name="gnt_appopen_cta_width">180dp</dimen>
   <dimen name="gnt_appopen_cta_height">50dp</dimen>
+  <dimen name="gnt_appopen_headline_padding_start">118dp</dimen>
+  <dimen name="gnt_appopen_headline_padding_bottom">76dp</dimen>
 </resources>
