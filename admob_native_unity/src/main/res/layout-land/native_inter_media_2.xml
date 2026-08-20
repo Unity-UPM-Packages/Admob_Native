@@ -117,7 +117,6 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/gnt_land_inter_btn_height"
                     android:layout_marginTop="10dp"
-                    android:elevation="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

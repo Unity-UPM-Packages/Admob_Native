@@ -20,4 +20,12 @@
   <dimen name="gnt_fs_headline_size">23sp</dimen>
   <dimen name="gnt_fs_secondary_size">18sp</dimen>
   <dimen name="gnt_fs_close_btn_size">44dp</dimen>
+
+  <!-- AppOpen Responsive Dimensions (sw >= 720dp) -->
+  <dimen name="gnt_appopen_top_bar_height">88dp</dimen>
+  <dimen name="gnt_appopen_bottom_bar_height">44dp</dimen>
+  <dimen name="gnt_appopen_footer_height">96dp</dimen>
+  <dimen name="gnt_appopen_icon_size">60dp</dimen>
+  <dimen name="gnt_appopen_cta_width">220dp</dimen>
+  <dimen name="gnt_appopen_cta_height">60dp</dimen>
 </resources>

@@ -111,6 +111,9 @@ class CountdownDecorator(
         closeButton?.visibility = View.GONE
         closeButton?.alpha = 0.5f
 
+        val textTag = countdownText?.tag as? String ?: ""
+        val isRemainingSuffix = textTag.contains("remaining")
+
         countdownTimer = object : SonicCountDownTimer(countdownTimerDurationMillis, 16) {
             override fun onTimerTick(timeRemaining: Long) {
                 val secondsRemaining = (timeRemaining / 1000).toInt()
@@ -129,7 +132,12 @@ class CountdownDecorator(
                     closeButton?.visibility = View.GONE
                 }
 
-                countdownText?.text = (secondsRemaining + 1).toString()
+                val currentSeconds = secondsRemaining + 1
+                if (isRemainingSuffix) {
+                    countdownText?.text = "${currentSeconds}s remaining..."
+                } else {
+                    countdownText?.text = currentSeconds.toString()
+                }
 
                 if (isLineFill) {
                     val elapsedTime = countdownTimerDurationMillis - timeRemaining
