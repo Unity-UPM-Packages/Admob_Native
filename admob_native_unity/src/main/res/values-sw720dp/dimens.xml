@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Landscape Interstitial Responsive Dimensions (sw >= 720dp: 10+ inch Tablets / Large Displays) -->
+  <dimen name="gnt_land_inter_btn_height">64dp</dimen>
+  <dimen name="gnt_land_inter_headline_size">28sp</dimen>
+  <dimen name="gnt_land_inter_secondary_size">20sp</dimen>
+  <dimen name="gnt_land_inter_ad_badge_size">16sp</dimen>
+  <dimen name="gnt_land_inter_btn_text_size">22sp</dimen>
+  <dimen name="gnt_land_inter_icon_size">300dp</dimen>
+  <dimen name="gnt_land_inter_progress_size">44dp</dimen>
+  <dimen name="gnt_land_inter_countdown_text_size">18sp</dimen>
+
+  <!-- Fullscreen Media Responsive Dimensions (sw >= 720dp) -->
+  <dimen name="gnt_fs_bottom_card_height">100dp</dimen>
+  <dimen name="gnt_fs_icon_size">60dp</dimen>
+  <dimen name="gnt_fs_cta_width">250dp</dimen>
+  <dimen name="gnt_fs_cta_height">64dp</dimen>
+  <dimen name="gnt_fs_cta_text_size">22sp</dimen>
+  <dimen name="gnt_fs_ad_badge_size">15sp</dimen>
+  <dimen name="gnt_fs_headline_size">23sp</dimen>
+  <dimen name="gnt_fs_secondary_size">18sp</dimen>
+  <dimen name="gnt_fs_close_btn_size">44dp</dimen>
+</resources>

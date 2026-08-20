@@ -55,7 +55,7 @@ class CountdownDecorator(
     }
 
     private fun startCloseLogic(rootView: View, callbacks: NativeAdCallbacks) {
-        val closeButton = rootView.findViewById<ImageView>(R.id.ad_close_button)
+        val closeButton = rootView.findViewById<View>(R.id.ad_close_button)
         val progressBar = rootView.findViewById<ProgressBar>(R.id.ad_progress_bar)
         val countdownText = rootView.findViewById<TextView>(R.id.ad_countdown_text)
 
@@ -93,23 +93,30 @@ class CountdownDecorator(
     }
 
     private fun startMainCountdown(
-        closeButton: ImageView?,
+        closeButton: View?,
         progressBar: ProgressBar?,
         countdownText: TextView?
     ) {
-        progressBar?.progress = 100  // Start from 100% and decrease
+        val tag = progressBar?.tag as? String ?: ""
+        val isLineFill = tag.contains("line_fill") || tag.contains("reverse")
+
+        if (isLineFill) {
+            progressBar?.progress = 0
+        } else {
+            progressBar?.progress = 100
+        }
 
         progressBar?.visibility = View.VISIBLE
         countdownText?.visibility = View.VISIBLE
         closeButton?.visibility = View.GONE
         closeButton?.alpha = 0.5f
 
-        countdownTimer = object : SonicCountDownTimer(countdownTimerDurationMillis, 1000) {
+        countdownTimer = object : SonicCountDownTimer(countdownTimerDurationMillis, 16) {
             override fun onTimerTick(timeRemaining: Long) {
                 val secondsRemaining = (timeRemaining / 1000).toInt()
 
                 // Stop showing countdown when it reaches 0, move to next phase immediately
-                if (secondsRemaining <= 0) {
+                if (timeRemaining <= 0) {
                     onTimerFinish()
                     return
                 }
@@ -122,15 +129,24 @@ class CountdownDecorator(
                     closeButton?.visibility = View.GONE
                 }
 
-                countdownText?.text = secondsRemaining.toString()
+                countdownText?.text = (secondsRemaining + 1).toString()
 
-                // Progress decreases from 100% to 0% to show remaining time
-                val progressPercent =
-                    (timeRemaining * 100 / countdownTimerDurationMillis).toInt().coerceAtLeast(0)
-                progressBar?.progress = progressPercent
+                if (isLineFill) {
+                    val elapsedTime = countdownTimerDurationMillis - timeRemaining
+                    val progressPercent =
+                        ((elapsedTime * 100) / countdownTimerDurationMillis).toInt().coerceIn(0, 100)
+                    progressBar?.progress = progressPercent
+                } else {
+                    val progressPercent =
+                        (timeRemaining * 100 / countdownTimerDurationMillis).toInt().coerceAtLeast(0)
+                    progressBar?.progress = progressPercent
+                }
             }
 
             override fun onTimerFinish() {
+                if (isLineFill) {
+                    progressBar?.progress = 100
+                }
                 startCloseButtonDelay(closeButton, progressBar, countdownText)
             }
         }
@@ -138,11 +154,20 @@ class CountdownDecorator(
     }
 
     private fun startCloseButtonDelay(
-        closeButton: ImageView?,
+        closeButton: View?,
         progressBar: ProgressBar?,
         countdownText: TextView?
     ) {
-        progressBar?.visibility = View.GONE
+        val tag = progressBar?.tag as? String ?: ""
+        val keepVisible = tag.contains("line_fill") || tag.contains("keep")
+
+        if (!keepVisible) {
+            progressBar?.visibility = View.GONE
+        } else {
+            progressBar?.visibility = View.VISIBLE
+            progressBar?.progress = 100
+        }
+
         countdownText?.visibility = View.GONE
         closeButton?.visibility = View.VISIBLE
         closeButton?.alpha = 1.0f

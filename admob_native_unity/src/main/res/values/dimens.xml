@@ -22,4 +22,25 @@
   <dimen name="native_mrec_height">250dp</dimen>
   <dimen name="native_video_width">320dp</dimen>
   <dimen name="native_video_height">480dp</dimen>
+
+  <!-- Landscape Interstitial Responsive Dimensions (Phone default) -->
+  <dimen name="gnt_land_inter_btn_height">42dp</dimen>
+  <dimen name="gnt_land_inter_headline_size">18sp</dimen>
+  <dimen name="gnt_land_inter_secondary_size">13sp</dimen>
+  <dimen name="gnt_land_inter_ad_badge_size">11sp</dimen>
+  <dimen name="gnt_land_inter_btn_text_size">14sp</dimen>
+  <dimen name="gnt_land_inter_icon_size">180dp</dimen>
+  <dimen name="gnt_land_inter_progress_size">28dp</dimen>
+  <dimen name="gnt_land_inter_countdown_text_size">12sp</dimen>
+
+  <!-- Fullscreen Media Responsive Dimensions (Phone default) -->
+  <dimen name="gnt_fs_bottom_card_height">59dp</dimen>
+  <dimen name="gnt_fs_icon_size">32dp</dimen>
+  <dimen name="gnt_fs_cta_width">150dp</dimen>
+  <dimen name="gnt_fs_cta_height">40dp</dimen>
+  <dimen name="gnt_fs_cta_text_size">13sp</dimen>
+  <dimen name="gnt_fs_ad_badge_size">10sp</dimen>
+  <dimen name="gnt_fs_headline_size">14sp</dimen>
+  <dimen name="gnt_fs_secondary_size">11sp</dimen>
+  <dimen name="gnt_fs_close_btn_size">28dp</dimen>
 </resources>
