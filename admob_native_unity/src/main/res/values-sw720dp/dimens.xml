@@ -19,7 +19,7 @@
   <dimen name="gnt_fs_ad_badge_size">15sp</dimen>
   <dimen name="gnt_fs_headline_size">23sp</dimen>
   <dimen name="gnt_fs_secondary_size">18sp</dimen>
-  <dimen name="gnt_fs_close_btn_size">44dp</dimen>
+  <dimen name="close_btn_size">44dp</dimen>
   <dimen name="gnt_fs_headline_padding_start">138dp</dimen>
   <dimen name="gnt_land_fs_headline_padding_start">144dp</dimen>
   <dimen name="gnt_fs_headline_padding_bottom">50dp</dimen>

@@ -150,18 +150,17 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!-- 3. Nút đóng đặt đè ở góc trên bên trái của MediaView -->
+                <!-- 3. Nút đóng đặt đè ở góc trên bên phải của MediaView -->
                 <ImageView
                     android:id="@+id/ad_close_button"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/close_btn_size"
+                    android:layout_height="@dimen/close_btn_size"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:clickable="true"
                     android:contentDescription="Close Ad"
                     android:elevation="20dp"
                     android:focusable="true"
-                    android:padding="5dp"
                     android:src="@drawable/ic_cancel"
                     app:layout_constraintEnd_toEndOf="@id/media_view"
                     app:layout_constraintTop_toTopOf="@id/media_view"

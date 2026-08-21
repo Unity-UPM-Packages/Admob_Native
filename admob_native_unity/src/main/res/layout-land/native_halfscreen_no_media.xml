@@ -138,15 +138,14 @@
                 <!-- 4. Nút đóng đặt ở góc trên bên phải đè lên trên tiêu đề -->
                 <ImageView
                     android:id="@+id/ad_close_button"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/close_btn_size"
+                    android:layout_height="@dimen/close_btn_size"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
                     android:clickable="true"
                     android:contentDescription="Close Ad"
                     android:elevation="20dp"
                     android:focusable="true"
-                    android:padding="5dp"
                     android:src="@drawable/ic_cancel"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"

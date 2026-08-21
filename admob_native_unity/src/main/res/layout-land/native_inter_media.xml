@@ -90,7 +90,7 @@
                 android:layout_width="@dimen/gnt_fs_cta_width"
                 android:layout_height="@dimen/gnt_fs_cta_height"
                 android:layout_marginEnd="16dp"
-                android:background="@drawable/ad_cta_blue"
+                android:background="@drawable/btn_cta_blue"
                 android:gravity="center"
                 android:maxLines="1"
                 android:text="Open"
@@ -140,11 +140,11 @@
                 app:layout_constraintTop_toBottomOf="@id/ad_notification_view"
                 tools:text="body/advertise" />
 
-            <!-- 8. Nút Close ở góc trên bên phải: căn lề 15dp, kích thước 28dp, không padding -->
+            <!-- 8. Nút đóng (ic_cancel) ở góc trên bên phải -->
             <ImageView
                 android:id="@+id/ad_close_button"
-                android:layout_width="@dimen/gnt_fs_close_btn_size"
-                android:layout_height="@dimen/gnt_fs_close_btn_size"
+                android:layout_width="@dimen/close_btn_size"
+                android:layout_height="@dimen/close_btn_size"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="15dp"
                 android:contentDescription="Close Ad"
