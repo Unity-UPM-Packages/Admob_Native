@@ -134,7 +134,7 @@
                     android:layout_width="@dimen/gnt_reward_cta_width"
                     android:layout_height="@dimen/gnt_reward_cta_height"
                     android:layout_marginTop="14dp"
-                    android:background="@drawable/ad_cta_fullscreen_background"
+                    android:background="@drawable/ad_cta_blue"
                     android:gravity="center"
                     android:maxLines="1"
                     android:textColor="@color/gnt_white"

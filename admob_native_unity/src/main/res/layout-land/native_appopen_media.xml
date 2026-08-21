@@ -99,7 +99,7 @@
                 android:layout_width="@dimen/gnt_appopen_cta_width"
                 android:layout_height="@dimen/gnt_appopen_cta_height"
                 android:layout_marginEnd="16dp"
-                android:background="@drawable/ad_cta_fullscreen_background"
+                android:background="@drawable/ad_cta_blue"
                 android:gravity="center"
                 android:maxLines="1"
                 android:text="Open"

@@ -91,14 +91,16 @@
                                 android:id="@+id/ad_notification_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/gnt_rounded_corners_shape"
+                                android:background="@drawable/ad_badge_yellow_background"
                                 android:gravity="center"
-                                android:paddingStart="4dp"
-                                android:paddingEnd="4dp"
+                                android:paddingBottom="1dp"
+                                android:paddingEnd="5dp"
+                                android:paddingStart="5dp"
+                                android:paddingTop="1dp"
                                 android:text="Ad"
+                                android:textColor="@color/gnt_ad_badge_text_brown"
                                 android:textSize="10sp"
-                                android:textStyle="bold"
-                                app:backgroundTint="@color/gnt_ad_green" />
+                                android:textStyle="bold" />
 
                             <!-- Tên quảng cáo (primary) -->
                             <TextView
