@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <!-- Khoảng cách chuẩn giữa nhãn Ad và chữ Headline (sw >= 600dp) -->
-  <dimen name="gnt_ad_badge_headline_gap">8dp</dimen>
-
   <!-- Landscape Interstitial Responsive Dimensions (sw >= 600dp: 7-8 inch Tablets / Foldables) -->
   <dimen name="gnt_land_inter_btn_height">56dp</dimen>
   <dimen name="gnt_land_inter_headline_size">24sp</dimen>
   <dimen name="gnt_land_inter_secondary_size">17sp</dimen>
   <dimen name="gnt_land_inter_ad_badge_size">14sp</dimen>
   <dimen name="gnt_land_inter_btn_text_size">18sp</dimen>
-  <dimen name="gnt_land_inter_icon_size">240dp</dimen>
+  <dimen name="no_media_icon_size">240dp</dimen>
   <dimen name="gnt_land_inter_progress_size">38dp</dimen>
   <dimen name="gnt_land_inter_countdown_text_size">16sp</dimen>
 

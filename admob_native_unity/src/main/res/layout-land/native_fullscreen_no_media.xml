@@ -32,8 +32,8 @@
 
                 <ImageView
                     android:id="@+id/icon"
-                    android:layout_width="@dimen/gnt_land_inter_icon_size"
-                    android:layout_height="@dimen/gnt_land_inter_icon_size"
+                    android:layout_width="@dimen/no_media_icon_size"
+                    android:layout_height="@dimen/no_media_icon_size"
                     android:layout_gravity="center"
                     android:scaleType="fitCenter"
                     tools:src="@android:drawable/sym_def_app_icon" />
