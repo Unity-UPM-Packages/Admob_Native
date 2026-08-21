@@ -4,13 +4,14 @@
   <dimen name="native_mrec_width">300dp</dimen>
   <dimen name="native_mrec_height">250dp</dimen>
 
+  <dimen name="no_media_icon_size">180dp</dimen>
+
   <!-- Landscape Interstitial Responsive Dimensions (Phone default) -->
   <dimen name="gnt_land_inter_btn_height">42dp</dimen>
   <dimen name="gnt_land_inter_headline_size">18sp</dimen>
   <dimen name="gnt_land_inter_secondary_size">13sp</dimen>
   <dimen name="gnt_land_inter_ad_badge_size">11sp</dimen>
   <dimen name="gnt_land_inter_btn_text_size">14sp</dimen>
-  <dimen name="no_media_icon_size">180dp</dimen>
   <dimen name="gnt_land_inter_progress_size">28dp</dimen>
   <dimen name="gnt_land_inter_countdown_text_size">12sp</dimen>
 
