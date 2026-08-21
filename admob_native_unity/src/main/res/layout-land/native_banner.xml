@@ -22,6 +22,25 @@
             android:layout_gravity="bottom|center_horizontal"
             android:background="@color/gnt_bg_native_banner">
 
+            <!-- 1. Headline Vùng Click Phủ Tràn Toàn Bộ Banner (0dp x 0dp, đặt đầu tiên trong Z-order) -->
+            <TextView
+                android:id="@+id/headline"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:ellipsize="end"
+                android:gravity="start|center_vertical"
+                android:maxLines="1"
+                android:paddingStart="79dp"
+                android:textColor="#B6BCC3"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Quảng cáo thử nghiệm" />
+
+            <!-- 2. Icon quảng cáo bên trái -->
             <ImageView
                 android:id="@+id/icon"
                 android:layout_width="35dp"
@@ -33,6 +52,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@android:drawable/sym_def_app_icon" />
 
+            <!-- 3. Nút CTA bên phải -->
             <Button
                 android:id="@+id/cta"
                 android:layout_width="wrap_content"
@@ -52,70 +72,51 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Install" />
 
-            <LinearLayout
-                android:id="@+id/content"
+            <!-- 4. Nhãn Ad màu vàng -->
+            <TextView
+                android:id="@+id/ad_notification_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/ad_badge_yellow_background"
+                android:gravity="center"
+                android:paddingBottom="1dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="1dp"
+                android:text="Ad"
+                android:textColor="@color/gnt_ad_badge_text_brown"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 5. Trục phân chia 4:6 (40% Headline / 60% Advertiser) -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/text_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.40" />
+
+            <!-- 6. Advertiser (Bắt đầu từ trục 40% đến trước CTA) -->
+            <TextView
+                android:id="@+id/advertiser"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
+                android:gravity="start|center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="#B6BCC3"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/cta"
-                app:layout_constraintStart_toEndOf="@id/icon"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
-                    android:id="@+id/headline_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/ad_notification_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/ad_badge_yellow_background"
-                        android:gravity="center"
-                        android:paddingBottom="1dp"
-                        android:paddingEnd="5dp"
-                        android:paddingStart="5dp"
-                        android:paddingTop="1dp"
-                        android:text="Ad"
-                        android:textColor="@color/gnt_ad_badge_text_brown"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/headline"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginStart="4dp"
-                        android:gravity="center_vertical"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:textColor="#B6BCC3"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        tools:text="Quảng cáo thử nghiệm" />
-                    <TextView
-                        android:id="@+id/secondary"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center_vertical"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:textColor="#B6BCC3"
-                        android:textSize="12sp"
-                        tools:text="Install Flood-It App for free!" />
-                </LinearLayout>
-
-
-            </LinearLayout>
+                app:layout_constraintStart_toEndOf="@id/text_guideline"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Install Flood-It App for free!" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.gms.ads.nativead.NativeAdView>
