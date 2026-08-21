@@ -48,4 +48,9 @@
   <dimen name="gnt_reward_no_media_headline_padding_bottom">74dp</dimen>
   <dimen name="gnt_reward_headline_padding_start">70dp</dimen>
   <dimen name="gnt_reward_headline_padding_end">32dp</dimen>
+
+  <!-- Interstitial V2 Responsive Headline Dimensions -->
+  <dimen name="gnt_inter_2_headline_padding_bottom">74dp</dimen>
+  <dimen name="gnt_inter_2_headline_padding_start">70dp</dimen>
+  <dimen name="gnt_inter_2_headline_padding_end">32dp</dimen>
 </resources>
