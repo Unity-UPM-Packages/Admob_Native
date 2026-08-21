@@ -35,7 +35,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/native_background">
+                android:background="@color/gnt_bg_native_solid">
 
                 <!-- 1. MediaView tỉ lệ 4:3, tự động tính chiều rộng dựa trên chiều cao thực tế để tránh tràn lùi -->
                 <com.google.android.gms.ads.nativead.MediaView

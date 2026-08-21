@@ -20,7 +20,7 @@
             android:layout_height="60dp"
             android:paddingHorizontal="8dp"
             android:layout_gravity="bottom|center_horizontal"
-            android:background="@drawable/native_banner_background">
+            android:background="@color/gnt_bg_native_banner">
 
             <ImageView
                 android:id="@+id/icon"

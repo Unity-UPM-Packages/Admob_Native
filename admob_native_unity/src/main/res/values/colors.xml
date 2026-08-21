@@ -23,4 +23,6 @@
   <color name="gnt_ad_badge_text_brown">#7A2D00</color>
   <color name="gnt_cta_bg_dark">#151F31</color>
   <color name="gnt_border_dark">#505763</color>
+  <color name="gnt_bg_native_solid">#0E2139</color>
+  <color name="gnt_bg_native_banner">#CC0E2139</color>
 </resources>

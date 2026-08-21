@@ -35,7 +35,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/native_background">
+                android:background="@color/gnt_bg_native_solid">
 
                 <!-- 1. Container chứa tiêu đề (primary) và mô tả (secondary) được đưa lên trên cùng -->
                 <LinearLayout
