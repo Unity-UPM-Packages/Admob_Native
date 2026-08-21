@@ -21,4 +21,5 @@
   <color name="gnt_border_dark">#505763</color>
   <color name="gnt_bg_native_solid">#0E2139</color>
   <color name="gnt_bg_native_banner">#CC0E2139</color>
+  <color name="gnt_reward_btn_bg">#3A3539</color>
 </resources>

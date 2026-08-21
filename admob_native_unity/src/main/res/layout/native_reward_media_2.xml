@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ad_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gnt_bg_dark"
+    android:elevation="100dp">
+
+    <com.google.android.gms.ads.nativead.NativeAdView
+        android:id="@+id/native_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gnt_bg_dark">
+
+            <!-- Trục phân cách 50% / 50% theo chiều dọc màn hình dọc -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/split_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.50" />
+
+            <!-- 1. Phần bên trên: Chiếm trọn 50% chiều cao màn hình, nền #2F2A2E -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/right_container"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/gnt_reward_bg_dark"
+                app:layout_constraintBottom_toTopOf="@id/split_guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Headline Vùng Click Phủ Tràn Mép (0dp x 0dp toàn bộ nửa trên, đặt đầu tiên trong Z-order) -->
+                <TextView
+                    android:id="@+id/primary"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:ellipsize="end"
+                    android:gravity="start|center_vertical"
+                    android:maxLines="1"
+                    android:paddingTop="@dimen/gnt_reward_media_headline_padding_top"
+                    android:paddingEnd="@dimen/gnt_reward_headline_padding_end"
+                    android:paddingStart="@dimen/gnt_reward_headline_padding_start"
+                    android:textColor="@color/gnt_white"
+                    android:textSize="@dimen/gnt_land_inter_headline_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Headline" />
+
+                <!-- Icon ứng dụng ở nửa trên -->
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="@dimen/gnt_reward_icon_size"
+                    android:layout_height="@dimen/gnt_reward_icon_size"
+                    android:layout_marginBottom="12dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toTopOf="@id/ad_notification_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:src="@android:drawable/sym_def_app_icon" />
+
+                <!-- Dòng 1: Nhãn Ad vàng -->
+                <TextView
+                    android:id="@+id/ad_notification_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:background="@drawable/ad_badge_yellow_background"
+                    android:gravity="center"
+                    android:paddingBottom="1dp"
+                    android:paddingEnd="6dp"
+                    android:paddingStart="6dp"
+                    android:paddingTop="1dp"
+                    android:text="Ad"
+                    android:textColor="@color/gnt_ad_badge_text_brown"
+                    android:textSize="@dimen/gnt_land_inter_ad_badge_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/secondary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/icon" />
+
+                <!-- Dòng 2: Secondary (Mô tả phụ) -->
+                <TextView
+                    android:id="@+id/secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#B6BCC3"
+                    android:textSize="@dimen/gnt_land_inter_secondary_size"
+                    app:layout_constraintBottom_toTopOf="@id/cta"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ad_notification_view"
+                    tools:text="body/advertise" />
+
+                <!-- Dòng 3: Nút CTA màu #3A3539 -->
+                <android.widget.Button
+                    android:id="@+id/cta"
+                    android:layout_width="@dimen/gnt_reward_cta_width"
+                    android:layout_height="@dimen/gnt_reward_cta_height"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/btn_cta_gray"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/gnt_white"
+                    android:textSize="@dimen/gnt_land_inter_btn_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/secondary"
+                    tools:text="Open" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 2. Phần bên dưới: Chiếm 50% chiều cao màn hình, nền gnt_bg_dark, chứa MediaView -->
+            <FrameLayout
+                android:id="@+id/left_container"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/gnt_bg_dark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/split_guideline">
+
+                <com.google.android.gms.ads.nativead.MediaView
+                    android:id="@+id/media_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter" />
+            </FrameLayout>
+
+            <!-- 3. Khu vực đếm ngược dạng Pill bo nửa phải ("5s remaining...") ở bên trái giống AppOpen -->
+            <TextView
+                android:id="@+id/ad_countdown_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_countdown_pill_left"
+                android:gravity="center"
+                android:paddingBottom="7dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:tag="remaining_suffix"
+                android:textColor="#C5CCD6"
+                android:textSize="13sp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="5s remaining..."
+                tools:visibility="visible" />
+
+            <!-- 4. Nút Skip (Close) dạng Pill bo ngược từ phải sang với icon vector và text "Skip" -->
+            <TextView
+                android:id="@+id/ad_close_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_countdown_pill_right"
+                android:drawableStart="@drawable/ic_skip_next"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="7dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:text="Skip"
+                android:textColor="@color/gnt_white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.gms.ads.nativead.NativeAdView>
+</FrameLayout>
