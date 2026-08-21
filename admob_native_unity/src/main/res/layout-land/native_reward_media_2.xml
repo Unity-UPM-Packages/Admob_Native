@@ -58,7 +58,7 @@
 
                 <!-- Headline Vùng Click Phủ Tràn Mép (0dp x 0dp toàn bộ nửa phải, đặt đầu tiên trong Z-order) -->
                 <TextView
-                    android:id="@+id/primary"
+                    android:id="@+id/headline"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:ellipsize="end"
@@ -106,13 +106,13 @@
                     android:textColor="@color/gnt_ad_badge_text_brown"
                     android:textSize="@dimen/gnt_land_inter_ad_badge_size"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@id/secondary"
+                    app:layout_constraintBottom_toTopOf="@id/advertiser"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/icon" />
 
-                <!-- Dòng 2: Secondary (Mô tả phụ) -->
+                <!-- Dòng 2: Advertiser (Mô tả phụ) -->
                 <TextView
-                    android:id="@+id/secondary"
+                    android:id="@+id/advertiser"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="32dp"
@@ -143,7 +143,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/secondary"
+                    app:layout_constraintTop_toBottomOf="@id/advertiser"
                     tools:text="Open" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -94,12 +94,12 @@ open class BaseShowBehavior : IShowBehavior {
         val context = adView.context
 
         adView.mediaView = adView.findViewById(findViewId(context, "media_view"))
-        adView.headlineView = adView.findViewById(findViewId(context, "primary"))
+        adView.headlineView = adView.findViewById(findViewId(context, "headline"))
         adView.bodyView = adView.findViewById(findViewId(context, "body"))
         adView.callToActionView = adView.findViewById(findViewId(context, "cta"))
         adView.iconView = adView.findViewById(findViewId(context, "icon"))
         adView.starRatingView = adView.findViewById(findViewId(context, "rating_bar"))
-        adView.advertiserView = adView.findViewById(findViewId(context, "secondary"))
+        adView.advertiserView = adView.findViewById(findViewId(context, "advertiser"))
         adView.storeView = adView.findViewById(findViewId(context,"ad_store"))
         adView.priceView = adView.findViewById(findViewId(context,"ad_price"))
         adView.imageView = adView.findViewById(findViewId(context, "main_image"))

@@ -63,7 +63,7 @@
 
             <!-- 5. Headline Vùng Click Mở Rộng 100% Toàn Bộ Màn Hình (Khai báo trước để các widget tương tác nằm đè lên trên) -->
             <TextView
-                android:id="@+id/primary"
+                android:id="@+id/headline"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:ellipsize="end"
@@ -110,7 +110,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/footer_card" />
 
-            <!-- 8. Nhãn Ad màu vàng: Tạo chuỗi dọc (Vertical Chain Packed) cùng Secondary để luôn căn giữa theo chiều dọc -->
+            <!-- 8. Nhãn Ad màu vàng: Tạo chuỗi dọc (Vertical Chain Packed) cùng Advertiser để luôn căn giữa theo chiều dọc -->
             <TextView
                 android:id="@+id/ad_notification_view"
                 android:layout_width="wrap_content"
@@ -127,14 +127,14 @@
                 android:textColor="@color/gnt_ad_badge_text_brown"
                 android:textSize="@dimen/gnt_fs_ad_badge_size"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/secondary"
+                app:layout_constraintBottom_toTopOf="@id/advertiser"
                 app:layout_constraintStart_toEndOf="@id/icon"
                 app:layout_constraintTop_toTopOf="@id/footer_card"
                 app:layout_constraintVertical_chainStyle="packed" />
 
-            <!-- 9. Mô tả phụ (Secondary): Phần tử thứ hai trong chuỗi dọc packed -->
+            <!-- 9. Mô tả phụ (Advertiser): Phần tử thứ hai trong chuỗi dọc packed -->
             <TextView
-                android:id="@+id/secondary"
+                android:id="@+id/advertiser"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"

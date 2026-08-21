@@ -102,9 +102,9 @@
                                 android:textSize="10sp"
                                 android:textStyle="bold" />
 
-                            <!-- Tên quảng cáo (primary) -->
+                            <!-- Tên quảng cáo (headline) -->
                             <TextView
-                                android:id="@+id/primary"
+                                android:id="@+id/headline"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="6dp"
@@ -117,9 +117,9 @@
 
                         </LinearLayout>
 
-                        <!-- Dòng mô tả quảng cáo (secondary) -->
+                        <!-- Dòng mô tả quảng cáo (advertiser) -->
                         <TextView
-                            android:id="@+id/secondary"
+                            android:id="@+id/advertiser"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"

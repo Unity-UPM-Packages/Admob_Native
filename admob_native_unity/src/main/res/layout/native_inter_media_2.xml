@@ -41,7 +41,7 @@
                 <!-- Headline Vùng Click Phủ Tràn Mép:
                      Kéo căng 100% chạm tới tận 4 mép ngoài cùng (trên, trục giữa 50%, và hai mép trái phải màn hình) -->
                 <TextView
-                    android:id="@+id/primary"
+                    android:id="@+id/headline"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:ellipsize="end"
@@ -75,14 +75,14 @@
                     android:textColor="@color/gnt_ad_badge_text_brown"
                     android:textSize="@dimen/gnt_land_inter_ad_badge_size"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@id/secondary"
+                    app:layout_constraintBottom_toTopOf="@id/advertiser"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_chainStyle="packed" />
 
-                <!-- Dòng 2: Secondary (Mô tả phụ, căn lề 32dp hai bên) -->
+                <!-- Dòng 2: Advertiser (Mô tả phụ, căn lề 32dp hai bên) -->
                 <TextView
-                    android:id="@+id/secondary"
+                    android:id="@+id/advertiser"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="32dp"
@@ -109,7 +109,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/secondary">
+                    app:layout_constraintTop_toBottomOf="@id/advertiser">
 
                     <!-- Trục Guideline 50%: Chia đôi hàng nút -->
                     <androidx.constraintlayout.widget.Guideline

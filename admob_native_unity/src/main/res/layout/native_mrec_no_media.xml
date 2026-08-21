@@ -76,7 +76,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/primary"
+                        android:id="@+id/headline"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
@@ -122,7 +122,7 @@
 
             <!-- Thành phần bắt buộc không sử dụng nhưng giữ lại để tương thích SDK -->
             <TextView
-                android:id="@+id/secondary"
+                android:id="@+id/advertiser"
                 android:layout_width="1dp"
                 android:layout_height="1dp"
                 android:visibility="gone"

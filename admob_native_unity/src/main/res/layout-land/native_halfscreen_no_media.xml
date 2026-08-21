@@ -37,7 +37,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/gnt_bg_native_solid">
 
-                <!-- 1. Container chứa tiêu đề (primary) và mô tả (secondary) được đưa lên trên cùng -->
+                <!-- 1. Container chứa tiêu đề (headline) và mô tả (advertiser) được đưa lên trên cùng -->
                 <LinearLayout
                     android:id="@+id/content"
                     android:layout_width="0dp"
@@ -50,9 +50,9 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <!-- Tên quảng cáo (primary) -->
+                    <!-- Tên quảng cáo (headline) -->
                     <TextView
-                        android:id="@+id/primary"
+                        android:id="@+id/headline"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingStart="35dp"
@@ -63,7 +63,7 @@
                         android:textStyle="bold"
                         tools:text="Quảng cáo thử nghiệm" />
 
-                    <!-- Dòng mô tả quảng cáo (secondary) + Nhãn AD -->
+                    <!-- Dòng mô tả quảng cáo (advertiser) + Nhãn AD -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -88,9 +88,9 @@
                             android:textSize="10sp"
                             android:textStyle="bold" />
 
-                        <!-- Mô tả quảng cáo (secondary) -->
+                        <!-- Mô tả quảng cáo (advertiser) -->
                         <TextView
-                            android:id="@+id/secondary"
+                            android:id="@+id/advertiser"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="6dp"
