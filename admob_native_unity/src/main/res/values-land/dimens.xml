@@ -1,5 +1,0 @@
-<resources>
-    <!-- Màn hình ngang: Kích thước gần giống với thiết kế gốc của bạn -->
-    <dimen name="native_video_width">500dp</dimen>
-    <dimen name="native_video_height">300dp</dimen>
-</resources>

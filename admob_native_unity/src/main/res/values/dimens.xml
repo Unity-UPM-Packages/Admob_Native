@@ -20,8 +20,6 @@
   <dimen name="gnt_no_size">0dp</dimen>
   <dimen name="native_mrec_width">300dp</dimen>
   <dimen name="native_mrec_height">250dp</dimen>
-  <dimen name="native_video_width">320dp</dimen>
-  <dimen name="native_video_height">480dp</dimen>
 
   <!-- Khoảng cách chuẩn giữa nhãn Ad và chữ Headline -->
   <dimen name="gnt_ad_badge_headline_gap">6dp</dimen>
