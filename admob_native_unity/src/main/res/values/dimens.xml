@@ -59,4 +59,13 @@
   <dimen name="gnt_appopen_cta_height">38dp</dimen>
   <dimen name="gnt_appopen_headline_padding_start">94dp</dimen>
   <dimen name="gnt_appopen_headline_padding_bottom">58dp</dimen>
+
+  <!-- Reward Responsive Dimensions (Phone default) -->
+  <dimen name="gnt_reward_icon_size">100dp</dimen>
+  <dimen name="gnt_reward_cta_width">160dp</dimen>
+  <dimen name="gnt_reward_cta_height">38dp</dimen>
+  <dimen name="gnt_reward_media_headline_padding_top">38dp</dimen>
+  <dimen name="gnt_reward_no_media_headline_padding_bottom">74dp</dimen>
+  <dimen name="gnt_reward_headline_padding_start">70dp</dimen>
+  <dimen name="gnt_reward_headline_padding_end">32dp</dimen>
 </resources>

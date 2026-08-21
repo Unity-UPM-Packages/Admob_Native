@@ -36,4 +36,13 @@
   <dimen name="gnt_appopen_cta_height">60dp</dimen>
   <dimen name="gnt_appopen_headline_padding_start">138dp</dimen>
   <dimen name="gnt_appopen_headline_padding_bottom">92dp</dimen>
+
+  <!-- Reward Responsive Dimensions (sw >= 720dp) -->
+  <dimen name="gnt_reward_icon_size">160dp</dimen>
+  <dimen name="gnt_reward_cta_width">240dp</dimen>
+  <dimen name="gnt_reward_cta_height">56dp</dimen>
+  <dimen name="gnt_reward_media_headline_padding_top">64dp</dimen>
+  <dimen name="gnt_reward_no_media_headline_padding_bottom">120dp</dimen>
+  <dimen name="gnt_reward_headline_padding_start">110dp</dimen>
+  <dimen name="gnt_reward_headline_padding_end">56dp</dimen>
 </resources>

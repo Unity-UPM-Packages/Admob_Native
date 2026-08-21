@@ -18,6 +18,7 @@
   <color name="gnt_gray_7f">#7F7F7F</color>
   <color name="gnt_green_34a853">#34A853</color>
   <color name="gnt_bg_dark">#0B1528</color>
+  <color name="gnt_reward_bg_dark">#2F2A2E</color>
   <color name="gnt_ad_badge_yellow">#F9C801</color>
   <color name="gnt_ad_badge_text_brown">#7A2D00</color>
   <color name="gnt_cta_bg_dark">#151F31</color>
