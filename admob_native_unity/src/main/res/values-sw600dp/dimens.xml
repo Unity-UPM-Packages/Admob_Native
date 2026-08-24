@@ -45,4 +45,15 @@
   <dimen name="gnt_inter_2_headline_padding_bottom">91dp</dimen>
   <dimen name="gnt_inter_2_headline_padding_start">76dp</dimen>
   <dimen name="gnt_inter_2_headline_padding_end">44dp</dimen>
+
+  <!-- Portrait Interstitial Responsive Dimensions (sw >= 600dp) -->
+  <dimen name="gnt_inter_top_card_height">80dp</dimen>
+  <dimen name="gnt_inter_top_headline_padding_start">66dp</dimen>
+  <dimen name="gnt_inter_top_headline_padding_top">18dp</dimen>
+  <dimen name="gnt_inter_top_badge_margin_start">20dp</dimen>
+  <dimen name="gnt_inter_top_badge_margin_top">16dp</dimen>
+  <dimen name="gnt_inter_top_advertiser_margin_top">10dp</dimen>
+  <dimen name="gnt_inter_bottom_bar_height">88dp</dimen>
+  <dimen name="gnt_inter_2_portrait_headline_padding_bottom">106dp</dimen>
+  <dimen name="gnt_inter_2_portrait_headline_padding_start">56dp</dimen>
 </resources>

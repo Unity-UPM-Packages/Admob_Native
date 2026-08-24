@@ -43,13 +43,13 @@
 
 | Tag ID | Thành phần Giao diện | Loại View iOS | Tương ứng `android:id` | Ghi chú |
 | :--- | :--- | :--- | :--- | :--- |
-| **101** | **Headline** (Tiêu đề) | `UILabel` | `primary` | Thành phần quan trọng nhất. |
+| **101** | **Headline** (Tiêu đề) | `UILabel` | `headline` | Thành phần quan trọng nhất. |
 | **102** | **Body** (Nội dung mô tả) | `UILabel` | `body` | |
 | **103** | **Media View** (Video/Ảnh chính) | `GADMediaView` | `media_view` | Bắt buộc phải có để hiển thị media. |
 | **104** | **Icon** (Biểu tượng ứng dụng) | `UIImageView` | `icon` | |
 | **105** | **Call to Action** (Nút hành động) | `UIButton` | `cta` | Nút "Cài đặt", "Tìm hiểu thêm"... |
 | **106** | **Star Rating** (Đánh giá sao) | `UIImageView` | `rating_bar` | **Lưu ý:** iOS không có RatingBar, dùng UIImageView để hiển thị ảnh sao. |
-| **107** | **Advertiser** (Nhà quảng cáo) | `UILabel` | `secondary` | Thường là tên công ty/ứng dụng. |
+| **107** | **Advertiser** (Nhà quảng cáo) | `UILabel` | `advertiser` | Thường là tên công ty/ứng dụng. |
 | **108** | **Store** (Cửa hàng) | `UILabel` | `ad_store` | Ví dụ: "App Store". |
 | **109** | **Price** (Giá) | `UILabel` | `ad_price` | |
 | | | | | |

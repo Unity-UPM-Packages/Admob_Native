@@ -8,6 +8,7 @@
     android:background="@color/gnt_white"
     android:elevation="100dp">
 
+    <!-- NativeAdView hiển thị toàn màn hình Interstitial 2 No Media (Portrait) -->
     <com.google.android.gms.ads.nativead.NativeAdView
         android:id="@+id/native_ad_view"
         android:layout_width="match_parent"
@@ -19,52 +20,23 @@
             android:layout_height="match_parent"
             android:background="@color/gnt_white">
 
-            <!-- Trục phân cách 50% / 50% theo chiều dọc màn hình -->
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/split_guideline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.50" />
-
-            <!-- 1. Phần bên trên: Chiếm trọn 50% chiều cao màn hình, không padding ngoài để vùng click chạm tới tận mép -->
+            <!-- 1. Phần bên dưới: Thẻ chứa thông tin và nút CTA (nền trắng) -->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/right_container"
+                android:id="@+id/bottom_card"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:background="@color/gnt_white"
-                app:layout_constraintBottom_toTopOf="@id/split_guideline"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintStart_toStartOf="parent">
 
-                <!-- Headline Vùng Click Phủ Tràn Mép:
-                     Kéo căng 100% chạm tới tận 4 mép ngoài cùng (trên, trục giữa 50%, và hai mép trái phải màn hình) -->
-                <TextView
-                    android:id="@+id/headline"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:ellipsize="end"
-                    android:gravity="start|center_vertical"
-                    android:maxLines="1"
-                    android:paddingBottom="@dimen/gnt_inter_2_headline_padding_bottom"
-                    android:paddingEnd="@dimen/gnt_inter_2_headline_padding_end"
-                    android:paddingStart="@dimen/gnt_inter_2_headline_padding_start"
-                    android:textColor="@color/gnt_black"
-                    android:textSize="@dimen/gnt_land_inter_headline_size"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Headline" />
-
-                <!-- Dòng 1: Nhãn Ad vàng (căn lề 32dp) -->
+                <!-- Dòng 1: Nhãn Ad vàng -->
                 <TextView
                     android:id="@+id/ad_notification_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/ad_badge_yellow_background"
                     android:gravity="center"
                     android:paddingBottom="1dp"
@@ -75,102 +47,61 @@
                     android:textColor="@color/gnt_ad_badge_text_brown"
                     android:textSize="@dimen/gnt_land_inter_ad_badge_size"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@id/advertiser"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_chainStyle="packed" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <!-- Dòng 2: Advertiser (Mô tả phụ, căn lề 32dp hai bên) -->
+                <!-- Dòng 2: Advertiser (Mô tả phụ) -->
                 <TextView
                     android:id="@+id/advertiser"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="32dp"
-                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="6dp"
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:textColor="@color/gnt_gray"
                     android:textSize="@dimen/gnt_land_inter_secondary_size"
-                    app:layout_constraintBottom_toTopOf="@id/button_container"
+                    app:layout_constraintBottom_toTopOf="@id/cta"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/ad_notification_view"
                     tools:text="body/advertise" />
 
-                <!-- Dòng 3: Khung chứa hàng nút bấm phân chia 50/50 (căn lề 32dp hai bên) -->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/button_container"
+                <!-- Dòng 3: Nút CTA màu xanh lá cây -->
+                <android.widget.Button
+                    android:id="@+id/cta"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/gnt_land_inter_btn_height"
-                    android:layout_marginEnd="32dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/btn_cta_green"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="CTA"
+                    android:textColor="@color/gnt_white"
+                    android:textSize="@dimen/gnt_land_inter_btn_text_size"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/advertiser">
-
-                    <!-- Trục Guideline 50%: Chia đôi hàng nút -->
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/button_guideline"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintGuide_percent="0.5" />
-
-                    <!-- Nút Close: Viền xám 7F7F7F, chữ màu đen -->
-                    <android.widget.Button
-                        android:id="@+id/ad_close_button"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/btn_close_border"
-                        android:gravity="center"
-                        android:maxLines="1"
-                        android:text="Close"
-                        android:textColor="@color/gnt_black"
-                        android:textSize="@dimen/gnt_land_inter_btn_text_size"
-                        android:textStyle="bold"
-                        android:visibility="gone"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/button_guideline"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:visibility="visible" />
-
-                    <!-- Nút CTA: Nền xanh lá, chữ trắng -->
-                    <android.widget.Button
-                        android:id="@+id/cta"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/btn_cta_green"
-                        android:gravity="center"
-                        android:maxLines="1"
-                        android:textColor="@color/gnt_white"
-                        android:textSize="@dimen/gnt_land_inter_btn_text_size"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/button_guideline"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:text="CTA" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    app:layout_constraintTop_toBottomOf="@id/advertiser"
+                    tools:text="CTA" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- 2. Phần bên dưới: Chiếm 50% chiều cao màn hình, nền D9D9D9, chứa Icon lớn 180dp -->
+            <!-- 2. Phần bên trên: Chiếm toàn bộ không gian còn lại phía trên bottom_card, nền D9D9D9, chứa Icon lớn 180dp -->
             <FrameLayout
-                android:id="@+id/left_container"
+                android:id="@+id/no_media_container"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@color/gnt_gray_d9"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/bottom_card"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/split_guideline">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:id="@+id/icon"
@@ -181,7 +112,28 @@
                     tools:src="@android:drawable/sym_def_app_icon" />
             </FrameLayout>
 
-            <!-- 3. Vòng tròn đếm ngược đè ở góc trên bên phải màn hình -->
+            <!-- 3. Headline Vùng Click Phủ Tràn Mép Toàn Màn Hình:
+                 Kéo căng 100% chạm 4 góc ngoài cùng. Text hiển thị ngay cạnh nhãn Ad ở thẻ dưới -->
+            <TextView
+                android:id="@+id/headline"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:ellipsize="end"
+                android:gravity="bottom|start"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/gnt_inter_2_portrait_headline_padding_bottom"
+                android:paddingEnd="20dp"
+                android:paddingStart="@dimen/gnt_inter_2_portrait_headline_padding_start"
+                android:textColor="@color/gnt_black"
+                android:textSize="@dimen/gnt_land_inter_headline_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Headline" />
+
+            <!-- 4. Vòng tròn đếm ngược đè ở góc trên bên phải màn hình -->
             <ProgressBar
                 android:id="@+id/ad_progress_bar"
                 style="?android:attr/progressBarStyleHorizontal"
@@ -212,6 +164,20 @@
                 app:layout_constraintStart_toStartOf="@id/ad_progress_bar"
                 app:layout_constraintTop_toTopOf="@id/ad_progress_bar"
                 tools:text="5"
+                tools:visibility="visible" />
+
+            <!-- 5. Nút Close ở góc trên bên phải (cùng vị trí với ad_progress_bar) -->
+            <ImageView
+                android:id="@+id/ad_close_button"
+                android:layout_width="@dimen/close_btn_size"
+                android:layout_height="@dimen/close_btn_size"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                android:contentDescription="Close Ad"
+                android:src="@drawable/ic_cancel"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
