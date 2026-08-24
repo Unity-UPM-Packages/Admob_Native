@@ -131,40 +131,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Headline" />
 
-            <!-- 4. Vòng tròn đếm ngược đè ở góc trên bên phải màn hình -->
-            <ProgressBar
-                android:id="@+id/ad_progress_bar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="@dimen/gnt_land_inter_progress_size"
-                android:layout_height="@dimen/gnt_land_inter_progress_size"
-                android:layout_marginEnd="15dp"
-                android:layout_marginTop="15dp"
-                android:indeterminate="false"
-                android:max="100"
-                android:progress="100"
-                android:progressDrawable="@drawable/circular_progress_bar"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:visibility="visible" />
-
-            <!-- Text số giây đếm ngược bên trong vòng tròn -->
-            <TextView
-                android:id="@+id/ad_countdown_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gnt_gray_7f"
-                android:textSize="@dimen/gnt_land_inter_countdown_text_size"
-                android:textStyle="bold"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@id/ad_progress_bar"
-                app:layout_constraintEnd_toEndOf="@id/ad_progress_bar"
-                app:layout_constraintStart_toStartOf="@id/ad_progress_bar"
-                app:layout_constraintTop_toTopOf="@id/ad_progress_bar"
-                tools:text="5"
-                tools:visibility="visible" />
-
-            <!-- 5. Nút Close ở góc trên bên phải (cùng vị trí với ad_progress_bar) -->
+            <!-- 4. Nút Close ở góc trên bên phải -->
             <ImageView
                 android:id="@+id/ad_close_button"
                 android:layout_width="@dimen/close_btn_size"
@@ -175,6 +142,22 @@
                 android:src="@drawable/ic_cancel"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <!-- 5. Thanh progress đếm ngược màu vàng sát mép trên màn hình -->
+            <ProgressBar
+                android:id="@+id/ad_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:indeterminate="false"
+                android:progress="0"
+                android:progressDrawable="@drawable/line_yellow_progress_bar"
+                android:tag="line_fill"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:visibility="visible" />
 
