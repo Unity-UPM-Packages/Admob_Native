@@ -99,7 +99,7 @@
                         android:textStyle="bold"
                         tools:text="Quảng cáo thử nghiệm" />
                     <TextView
-                        android:id="@+id/body"
+                        android:id="@+id/secondary"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
