@@ -28,7 +28,7 @@
                 android:background="@color/gnt_bg_dark"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ad_progress_bar" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <!-- Đường phân cách giữa top_card và media_view (màu #505763) -->
             <View
@@ -111,7 +111,7 @@
                 android:textSize="@dimen/gnt_fs_ad_badge_size"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ad_progress_bar" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <!-- 6. Advertiser / Mô tả phụ bên dưới nhãn Ad và Headline -->
             <TextView
