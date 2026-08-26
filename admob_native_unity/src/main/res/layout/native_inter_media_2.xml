@@ -30,13 +30,26 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
-                <!-- Dòng 1: Nhãn Ad vàng -->
+                <!-- Icon ứng dụng ở thẻ dưới (bên trái) -->
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="@dimen/gnt_fs_icon_size"
+                    android:layout_height="@dimen/gnt_fs_icon_size"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:scaleType="fitCenter"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@android:drawable/sym_def_app_icon"
+                    tools:visibility="visible" />
+
+                <!-- Dòng 1: Nhãn Ad vàng bên phải Icon -->
                 <TextView
                     android:id="@+id/ad_notification_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="10dp"
                     android:background="@drawable/ad_badge_yellow_background"
                     android:gravity="center"
                     android:paddingBottom="1dp"
@@ -47,16 +60,16 @@
                     android:textColor="@color/gnt_ad_badge_text_brown"
                     android:textSize="@dimen/gnt_land_inter_ad_badge_size"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintStart_toEndOf="@id/icon"
+                    app:layout_constraintTop_toTopOf="@id/icon" />
 
-                <!-- Dòng 2: Advertiser (Mô tả phụ) -->
+                <!-- Dòng 2: Advertiser (Mô tả phụ) bên phải Icon -->
                 <TextView
                     android:id="@+id/advertiser"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="6dp"
                     android:ellipsize="end"
                     android:maxLines="1"
@@ -64,7 +77,7 @@
                     android:textSize="@dimen/gnt_land_inter_secondary_size"
                     app:layout_constraintBottom_toTopOf="@id/cta"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon"
                     app:layout_constraintTop_toBottomOf="@id/ad_notification_view"
                     tools:text="body/advertise" />
 

@@ -70,7 +70,7 @@
                 android:maxLines="1"
                 android:paddingBottom="@dimen/gnt_fs_headline_padding_bottom"
                 android:paddingEnd="160dp"
-                android:paddingStart="@dimen/gnt_land_fs_headline_padding_start"
+                android:paddingStart="@dimen/gnt_inter_top_headline_padding_start"
                 android:textColor="@color/gnt_white"
                 android:textSize="@dimen/gnt_fs_headline_size"
                 android:textStyle="bold"
@@ -80,19 +80,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Headline" />
 
-            <!-- 4. Icon phụ bên trái footer (căn giữa theo chiều dọc) -->
-            <ImageView
-                android:id="@+id/app_icon"
-                android:layout_width="@dimen/gnt_fs_icon_size"
-                android:layout_height="@dimen/gnt_fs_icon_size"
-                android:layout_marginStart="16dp"
-                android:scaleType="fitCenter"
-                app:layout_constraintBottom_toBottomOf="@id/bottom_card"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/bottom_card"
-                tools:src="@android:drawable/sym_def_app_icon" />
-
-            <!-- 5. Nút CTA bên phải footer (căn giữa theo chiều dọc) -->
+            <!-- 4. Nút CTA bên phải footer (căn giữa theo chiều dọc) -->
             <android.widget.Button
                 android:id="@+id/cta"
                 android:layout_width="@dimen/gnt_fs_cta_width"
@@ -109,13 +97,13 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/bottom_card" />
 
-            <!-- 6. Nhãn Ad màu vàng: Chuỗi dọc Packed cùng Advertiser để căn giữa theo chiều dọc -->
+            <!-- 5. Nhãn Ad màu vàng: Chuỗi dọc Packed cùng Advertiser để căn giữa theo chiều dọc -->
             <TextView
                 android:id="@+id/ad_notification_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="@dimen/gnt_inter_top_badge_margin_start"
                 android:background="@drawable/ad_badge_yellow_background"
                 android:gravity="center"
                 android:paddingBottom="1dp"
@@ -127,24 +115,24 @@
                 android:textSize="@dimen/gnt_fs_ad_badge_size"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/advertiser"
-                app:layout_constraintStart_toEndOf="@id/app_icon"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/bottom_card"
                 app:layout_constraintVertical_chainStyle="packed" />
 
-            <!-- 7. Advertiser / Mô tả phụ: Phần tử thứ hai trong chuỗi dọc packed -->
+            <!-- 6. Advertiser / Mô tả phụ: Phần tử thứ hai trong chuỗi dọc packed -->
             <TextView
                 android:id="@+id/advertiser"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="@dimen/gnt_inter_top_badge_margin_start"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textColor="#B6BCC3"
                 android:textSize="@dimen/gnt_fs_secondary_size"
                 app:layout_constraintBottom_toBottomOf="@id/bottom_card"
                 app:layout_constraintEnd_toStartOf="@id/cta"
-                app:layout_constraintStart_toEndOf="@id/app_icon"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ad_notification_view"
                 tools:text="body/advertise" />
 

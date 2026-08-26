@@ -55,5 +55,5 @@
   <dimen name="gnt_inter_top_advertiser_margin_top">8dp</dimen>
   <dimen name="gnt_inter_bottom_bar_height">88dp</dimen>
   <dimen name="gnt_inter_2_portrait_headline_padding_bottom">106dp</dimen>
-  <dimen name="gnt_inter_2_portrait_headline_padding_start">56dp</dimen>
+  <dimen name="gnt_inter_2_portrait_headline_padding_start">114dp</dimen>
 </resources>

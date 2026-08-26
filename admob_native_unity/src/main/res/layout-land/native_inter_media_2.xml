@@ -65,7 +65,7 @@
                     android:ellipsize="end"
                     android:gravity="start|center_vertical"
                     android:maxLines="1"
-                    android:paddingBottom="@dimen/gnt_inter_2_headline_padding_bottom"
+                    android:paddingTop="@dimen/gnt_reward_media_headline_padding_top"
                     android:paddingEnd="@dimen/gnt_inter_2_headline_padding_end"
                     android:paddingStart="@dimen/gnt_inter_2_headline_padding_start"
                     android:textColor="@color/gnt_black"
@@ -76,6 +76,20 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="Headline" />
+
+                <!-- Icon ứng dụng ở nửa phải phía trên cụm Ad/Headline -->
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="@dimen/gnt_reward_icon_size"
+                    android:layout_height="@dimen/gnt_reward_icon_size"
+                    android:layout_marginBottom="12dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toTopOf="@id/ad_notification_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:src="@android:drawable/sym_def_app_icon" />
 
                 <!-- Dòng 1: Nhãn Ad vàng (căn lề 32dp) -->
                 <TextView
@@ -95,8 +109,7 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@id/advertiser"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_chainStyle="packed" />
+                    app:layout_constraintTop_toBottomOf="@id/icon" />
 
                 <!-- Dòng 2: Advertiser (Mô tả phụ, căn lề 32dp hai bên) -->
                 <TextView
