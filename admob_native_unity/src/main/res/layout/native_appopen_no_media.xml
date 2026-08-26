@@ -79,7 +79,7 @@
                 android:maxLines="1"
                 android:paddingBottom="@dimen/gnt_appopen_headline_padding_bottom"
                 android:paddingEnd="160dp"
-                android:paddingStart="@dimen/gnt_appopen_headline_padding_start"
+                android:paddingStart="@dimen/gnt_inter_top_headline_padding_start"
                 android:textColor="@color/gnt_black"
                 android:textSize="@dimen/gnt_fs_headline_size"
                 android:textStyle="bold"
@@ -89,19 +89,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Headline" />
 
-            <!-- 6. Icon phụ góc footer (căn giữa theo chiều dọc) -->
-            <ImageView
-                android:id="@+id/app_icon"
-                android:layout_width="@dimen/gnt_appopen_icon_size"
-                android:layout_height="@dimen/gnt_appopen_icon_size"
-                android:layout_marginStart="16dp"
-                android:scaleType="fitCenter"
-                app:layout_constraintBottom_toBottomOf="@id/footer_card"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/footer_card"
-                tools:src="@android:drawable/sym_def_app_icon" />
-
-            <!-- 7. Nút CTA bên phải (căn giữa theo chiều dọc) -->
+            <!-- 6. Nút CTA bên phải (căn giữa theo chiều dọc) -->
             <android.widget.Button
                 android:id="@+id/cta"
                 android:layout_width="@dimen/gnt_appopen_cta_width"
@@ -118,13 +106,13 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/footer_card" />
 
-            <!-- 8. Nhãn Ad màu vàng: Tạo chuỗi dọc (Vertical Chain Packed) cùng Advertiser để luôn căn giữa theo chiều dọc -->
+            <!-- 7. Nhãn Ad màu vàng: Tạo chuỗi dọc (Vertical Chain Packed) cùng Advertiser để luôn căn giữa theo chiều dọc -->
             <TextView
                 android:id="@+id/ad_notification_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="@dimen/gnt_inter_top_badge_margin_start"
                 android:background="@drawable/ad_badge_yellow_background"
                 android:gravity="center"
                 android:paddingBottom="1dp"
@@ -136,24 +124,24 @@
                 android:textSize="@dimen/gnt_fs_ad_badge_size"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/advertiser"
-                app:layout_constraintStart_toEndOf="@id/app_icon"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/footer_card"
                 app:layout_constraintVertical_chainStyle="packed" />
 
-            <!-- 9. Mô tả phụ (Advertiser): Phần tử thứ hai trong chuỗi dọc packed -->
+            <!-- 8. Mô tả phụ (Advertiser): Phần tử thứ hai trong chuỗi dọc packed -->
             <TextView
                 android:id="@+id/advertiser"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="@dimen/gnt_inter_top_badge_margin_start"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textColor="@color/gnt_gray"
                 android:textSize="@dimen/gnt_fs_secondary_size"
                 app:layout_constraintBottom_toBottomOf="@id/footer_card"
                 app:layout_constraintEnd_toStartOf="@id/cta"
-                app:layout_constraintStart_toEndOf="@id/app_icon"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ad_notification_view"
                 tools:text="body/advertise" />
 
