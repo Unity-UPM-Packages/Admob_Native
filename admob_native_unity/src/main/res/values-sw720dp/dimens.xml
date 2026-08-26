@@ -56,4 +56,5 @@
   <dimen name="gnt_inter_bottom_bar_height">104dp</dimen>
   <dimen name="gnt_inter_2_portrait_headline_padding_bottom">118dp</dimen>
   <dimen name="gnt_inter_2_portrait_headline_padding_start">138dp</dimen>
+  <dimen name="gnt_inter_2_no_media_portrait_headline_padding_start">72dp</dimen>
 </resources>
