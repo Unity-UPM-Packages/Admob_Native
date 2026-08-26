@@ -86,13 +86,13 @@
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        tools:text="Google Ads" />
+                        tools:text="Headline" />
 
                 </LinearLayout>
 
-                <!-- Dòng dưới: Body text (Mô tả quảng cáo) -->
+                <!-- Dòng dưới: Advertiser text (Mô tả quảng cáo) -->
                 <TextView
-                    android:id="@+id/body"
+                    android:id="@+id/advertiser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -100,7 +100,7 @@
                     android:maxLines="1"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="12sp"
-                    tools:text="Make your business more visible!" />
+                    tools:text="body/advertise" />
 
             </LinearLayout>
 
