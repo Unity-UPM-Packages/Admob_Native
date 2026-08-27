@@ -57,4 +57,7 @@
   <dimen name="gnt_inter_2_portrait_headline_padding_bottom">106dp</dimen>
   <dimen name="gnt_inter_2_portrait_headline_padding_start">114dp</dimen>
   <dimen name="gnt_inter_2_no_media_portrait_headline_padding_start">60dp</dimen>
+  <dimen name="gnt_halfscreen_icon_size">36dp</dimen>
+  <dimen name="gnt_halfscreen_headline_padding_bottom">104dp</dimen>
+  <dimen name="gnt_halfscreen_headline_padding_start">96dp</dimen>
 </resources>
