@@ -66,4 +66,7 @@
   <dimen name="gnt_halfscreen_icon_size">36dp</dimen>
   <dimen name="gnt_halfscreen_headline_padding_bottom">104dp</dimen>
   <dimen name="gnt_halfscreen_headline_padding_start">96dp</dimen>
+  <dimen name="gnt_mrec_icon_size">32dp</dimen>
+  <dimen name="gnt_mrec_headline_padding_bottom">65dp</dimen>
+  <dimen name="gnt_mrec_headline_padding_start">76dp</dimen>
 </resources>
