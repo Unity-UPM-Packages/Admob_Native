@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Nền vòng tròn màu xám với viền sáng -->
+    <path
+        android:pathData="M12,12m-10.5,0a10.5,10.5 0 1,1 21,0a10.5,10.5 0 1,1 -21,0"
+        android:fillColor="#5A5A5A"
+        android:strokeColor="#8E9DAE"
+        android:strokeWidth="1" />
+
+    <!-- Viền sáng của chữ X -->
+    <path
+        android:pathData="M8.5,8.5L15.5,15.5M15.5,8.5L8.5,15.5"
+        android:strokeColor="#8E9DAE"
+        android:strokeWidth="4.2"
+        android:strokeLineCap="round" />
+
+    <!-- Thân chữ X màu tối bên trong -->
+    <path
+        android:pathData="M8.5,8.5L15.5,15.5M15.5,8.5L8.5,15.5"
+        android:strokeColor="#1C1C1C"
+        android:strokeWidth="2.6"
+        android:strokeLineCap="round" />
+</vector>

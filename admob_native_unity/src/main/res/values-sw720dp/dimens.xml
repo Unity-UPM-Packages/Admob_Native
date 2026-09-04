@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Landscape Interstitial Responsive Dimensions (sw >= 720dp: 10+ inch Tablets / Large Displays) -->
+  <dimen name="gnt_land_inter_btn_height">64dp</dimen>
+  <dimen name="gnt_land_inter_headline_size">28sp</dimen>
+  <dimen name="gnt_land_inter_secondary_size">20sp</dimen>
+  <dimen name="gnt_land_inter_ad_badge_size">16sp</dimen>
+  <dimen name="gnt_land_inter_btn_text_size">22sp</dimen>
+  <dimen name="no_media_icon_size">280dp</dimen>
+  <dimen name="gnt_land_inter_progress_size">44dp</dimen>
+  <dimen name="gnt_land_inter_countdown_text_size">18sp</dimen>
+
+  <!-- Fullscreen Media Responsive Dimensions (sw >= 720dp) -->
+  <dimen name="gnt_fs_bottom_card_height">100dp</dimen>
+  <dimen name="gnt_fs_icon_size">60dp</dimen>
+  <dimen name="gnt_fs_cta_width">250dp</dimen>
+  <dimen name="gnt_fs_cta_height">64dp</dimen>
+  <dimen name="gnt_fs_cta_text_size">22sp</dimen>
+  <dimen name="gnt_fs_ad_badge_size">15sp</dimen>
+  <dimen name="gnt_fs_headline_size">23sp</dimen>
+  <dimen name="gnt_fs_secondary_size">18sp</dimen>
+  <dimen name="close_btn_size">44dp</dimen>
+  <dimen name="gnt_fs_headline_padding_start">138dp</dimen>
+  <dimen name="gnt_land_fs_headline_padding_start">144dp</dimen>
+  <dimen name="gnt_fs_headline_padding_bottom">50dp</dimen>
+
+  <!-- AppOpen Responsive Dimensions (sw >= 720dp) -->
+  <dimen name="gnt_appopen_top_bar_height">88dp</dimen>
+  <dimen name="gnt_appopen_bottom_bar_height">44dp</dimen>
+  <dimen name="gnt_appopen_footer_height">96dp</dimen>
+  <dimen name="gnt_appopen_icon_size">60dp</dimen>
+  <dimen name="gnt_appopen_cta_width">220dp</dimen>
+  <dimen name="gnt_appopen_cta_height">60dp</dimen>
+  <dimen name="gnt_appopen_headline_padding_start">138dp</dimen>
+  <dimen name="gnt_appopen_headline_padding_bottom">92dp</dimen>
+
+  <!-- Reward Responsive Dimensions (sw >= 720dp) -->
+  <dimen name="gnt_reward_icon_size">160dp</dimen>
+  <dimen name="gnt_reward_cta_width">240dp</dimen>
+  <dimen name="gnt_reward_cta_height">56dp</dimen>
+  <dimen name="gnt_reward_cta_margin_top">24dp</dimen>
+  <dimen name="gnt_reward_media_headline_padding_top">56dp</dimen>
+
+  <!-- Split Screen Responsive Headline Dimensions (Inter V2, Reward No Media) (sw >= 720dp) -->
+  <dimen name="gnt_inter_2_headline_padding_bottom">109dp</dimen>
+  <dimen name="gnt_inter_2_headline_padding_start">84dp</dimen>
+  <dimen name="gnt_inter_2_headline_padding_end">56dp</dimen>
+
+  <!-- Portrait Interstitial Responsive Dimensions (sw >= 720dp) -->
+  <dimen name="gnt_inter_top_card_height">100dp</dimen>
+  <dimen name="gnt_inter_top_headline_padding_start">78dp</dimen>
+  <dimen name="gnt_inter_top_headline_padding_top">22dp</dimen>
+  <dimen name="gnt_inter_top_badge_margin_start">24dp</dimen>
+  <dimen name="gnt_inter_top_badge_margin_top">25dp</dimen>
+  <dimen name="gnt_inter_top_advertiser_margin_top">10dp</dimen>
+  <dimen name="gnt_inter_bottom_bar_height">104dp</dimen>
+  <dimen name="gnt_inter_2_portrait_headline_padding_bottom">118dp</dimen>
+  <dimen name="gnt_inter_2_portrait_headline_padding_start">138dp</dimen>
+  <dimen name="gnt_inter_2_no_media_portrait_headline_padding_start">72dp</dimen>
+  <dimen name="gnt_halfscreen_icon_size">36dp</dimen>
+  <dimen name="gnt_halfscreen_headline_padding_bottom">104dp</dimen>
+  <dimen name="gnt_halfscreen_headline_padding_start">96dp</dimen>
+</resources>

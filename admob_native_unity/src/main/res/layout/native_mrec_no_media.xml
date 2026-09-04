@@ -19,13 +19,38 @@
             android:id="@+id/background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/native_background">
+            android:background="@color/gnt_bg_native_solid">
 
-            <!-- 1. Nút CTA ở dưới cùng -->
+            <!-- 1. Headline Vùng Click Phủ Tràn Mép Toàn Bộ Quảng Cáo:
+                 Kéo căng 0dp x 0dp chạm 4 góc ngoài cùng của NativeAdView.
+                 Padding được căn chỉnh để text hiển thị ngay cạnh nhãn Ad ở góc trên bên trái -->
+            <TextView
+                android:id="@+id/headline"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:ellipsize="end"
+                android:gravity="top|start"
+                android:maxLines="1"
+                android:paddingTop="10dp"
+                android:paddingStart="40dp"
+                android:paddingEnd="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Headline" />
+
+            <!-- 2. Nút CTA ở dưới cùng -->
             <Button
                 android:id="@+id/cta"
                 android:layout_width="0dp"
                 android:layout_height="35dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
                 android:background="@drawable/btn_cta_blue"
                 android:gravity="center"
                 android:lines="1"
@@ -35,62 +60,40 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="12dp"
                 tools:text="CONTINUE" />
 
-            <!-- 2. Layout chứa thông tin chữ ở trên cùng -->
+            <!-- 3. Layout chứa thông tin chữ ở trên cùng -->
             <LinearLayout
                 android:id="@+id/info_bar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
                 android:orientation="vertical"
-                android:paddingStart="12dp"
-                android:paddingTop="12dp"
-                android:paddingEnd="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <!-- Dòng trên: Ad, Title -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/ad_notification_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/gnt_rounded_corners_shape"
-                        app:backgroundTint="@color/gnt_ad_green"
-                        android:paddingStart="4dp"
-                        android:paddingEnd="4dp"
-                        android:text="Ad"
-                        android:textColor="#888888"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/primary"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:layout_weight="1"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:textColor="@android:color/white"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        tools:text="Google Ads" />
-
-                </LinearLayout>
-
-                <!-- Dòng dưới: Body text (Mô tả quảng cáo) -->
+                <!-- Nhãn Ad màu vàng -->
                 <TextView
-                    android:id="@+id/body"
+                    android:id="@+id/ad_notification_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ad_badge_yellow_background"
+                    android:gravity="center"
+                    android:paddingBottom="1dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingTop="1dp"
+                    android:text="Ad"
+                    android:textColor="@color/gnt_ad_badge_text_brown"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- Dòng dưới: Advertiser text (Mô tả quảng cáo) -->
+                <TextView
+                    android:id="@+id/advertiser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -98,15 +101,17 @@
                     android:maxLines="1"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="12sp"
-                    tools:text="Make your business more visible!" />
+                    tools:text="body/advertise" />
 
             </LinearLayout>
 
-            <!-- 3. Icon quảng cáo co giãn tự động nằm ở không gian giữa -->
+            <!-- 4. Icon quảng cáo co giãn tự động nằm ở không gian giữa -->
             <ImageView
                 android:id="@+id/icon"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:scaleType="fitCenter"
                 android:background="@android:color/transparent"
                 app:layout_constraintWidth_max="110dp"
@@ -117,15 +122,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/info_bar"
                 tools:src="@android:drawable/sym_def_app_icon" />
-
-            <!-- Thành phần bắt buộc không sử dụng nhưng giữ lại để tương thích SDK -->
-            <TextView
-                android:id="@+id/secondary"
-                android:layout_width="1dp"
-                android:layout_height="1dp"
-                android:visibility="gone"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <RatingBar
                 android:id="@+id/rating_bar"

@@ -35,90 +35,83 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/native_background">
+                android:background="@color/gnt_bg_native_solid">
 
-                <!-- 1. Container chứa tiêu đề (primary) và mô tả (secondary) được đưa lên trên cùng -->
-                <LinearLayout
-                    android:id="@+id/content"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <!-- Tên quảng cáo (primary) -->
-                    <TextView
-                        android:id="@+id/primary"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="35dp"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        tools:text="Quảng cáo thử nghiệm" />
-
-                    <!-- Dòng mô tả quảng cáo (secondary) + Nhãn AD -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:layout_marginTop="4dp"
-                        android:paddingStart="35dp"
-                        android:orientation="horizontal">
-
-                        <!-- Nhãn Ad màu xanh lá cây giống như banner -->
-                        <TextView
-                            android:id="@+id/ad_notification_view"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/gnt_rounded_corners_shape"
-                            android:gravity="center"
-                            android:paddingStart="4dp"
-                            android:paddingEnd="4dp"
-                            android:text="Ad"
-                            android:textSize="10sp"
-                            android:textStyle="bold"
-                            app:backgroundTint="@color/gnt_ad_green" />
-
-                        <!-- Mô tả quảng cáo (secondary) -->
-                        <TextView
-                            android:id="@+id/secondary"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
-                            android:ellipsize="end"
-                            android:maxLines="1"
-                            android:textColor="#B0BEC5"
-                            android:textSize="13sp"
-                            tools:text="Install Flood-It App for free!" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <!-- 2. Icon quảng cáo kích thước 220x220 đưa xuống dưới và căn giữa -->
-                <ImageView
-                    android:id="@+id/icon"
+                <!-- 1. Headline Vùng Click Phủ Tràn Mép Toàn Bộ Quảng Cáo:
+                     Kéo căng 0dp x 0dp chạm 4 góc ngoài cùng của NativeAdView.
+                     Padding được căn chỉnh để text hiển thị ngay cạnh nhãn Ad ở góc trên bên trái -->
+                <TextView
+                    android:id="@+id/headline"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:ellipsize="end"
+                    android:gravity="top|start"
+                    android:maxLines="1"
+                    android:paddingTop="17dp"
+                    android:paddingStart="86dp"
+                    android:paddingEnd="60dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Quảng cáo thử nghiệm" />
+
+                <!-- 2. Nhãn Ad màu vàng ở góc trên bên trái (sau đồng hồ đếm ngược) -->
+                <TextView
+                    android:id="@+id/ad_notification_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/ad_badge_yellow_background"
+                    android:gravity="center"
+                    android:paddingBottom="1dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingTop="1dp"
+                    android:text="Ad"
+                    android:textColor="@color/gnt_ad_badge_text_brown"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- 3. Mô tả phụ (Advertiser) bên dưới nhãn Ad và Headline -->
+                <TextView
+                    android:id="@+id/advertiser"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="60dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#B0BEC5"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@id/ad_close_button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ad_notification_view"
+                    tools:text="Install Flood-It App for free!" />
+
+                <!-- 4. Icon quảng cáo căn giữa -->
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="@dimen/no_media_icon_size"
+                    android:layout_height="@dimen/no_media_icon_size"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
                     android:scaleType="fitCenter"
                     android:background="@android:color/darker_gray"
-                    app:layout_constraintWidth_max="220dp"
-                    app:layout_constraintHeight_max="220dp"
-                    app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintBottom_toTopOf="@id/cta"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/content"
+                    app:layout_constraintTop_toBottomOf="@id/advertiser"
                     tools:src="@android:drawable/sym_def_app_icon" />
 
-                <!-- 3. Nút CTA kéo dài toàn bộ chiều rộng ở dưới cùng của thẻ -->
+                <!-- 5. Nút CTA kéo dài toàn bộ chiều rộng ở dưới cùng của thẻ -->
                 <Button
                     android:id="@+id/cta"
                     android:layout_width="0dp"
@@ -139,17 +132,15 @@
                 <!-- 4. Nút đóng đặt ở góc trên bên phải đè lên trên tiêu đề -->
                 <ImageView
                     android:id="@+id/ad_close_button"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/close_btn_size"
+                    android:layout_height="@dimen/close_btn_size"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
                     android:clickable="true"
                     android:contentDescription="Close Ad"
                     android:elevation="20dp"
                     android:focusable="true"
-                    android:padding="5dp"
                     android:src="@drawable/ic_cancel"
-                    android:tint="#CFD3D7"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     android:visibility="gone"
